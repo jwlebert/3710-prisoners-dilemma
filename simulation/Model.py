@@ -49,3 +49,12 @@ class GeneticAlgorithm(Model): # population
                 break
         
         return (p1, p2)
+    
+    def mutate(self, individual: GeneticIndividual):
+        mutated_chromosome = individual.chromosome
+        for i in range(self.gene_bit_len):
+            if (random.random > self.mutation_rate): continue
+
+            bit = 1 << i
+            mutated_chromosome = mutated_chromosome ^ bit
+        individual.chromosome = mutated_chromosome
