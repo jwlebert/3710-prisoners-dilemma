@@ -8,6 +8,18 @@ def main():
     print(*match.history, sep="\n")
     print(match.p1.score, match.p2.score)
 
+    match = Match(Strategy.AlwaysDefect, Strategy.TitForTat, rounds=5)
+    match.simulate()
+
+    print(*match.history, sep="\n")
+    print(match.p1.score, match.p2.score)
+
+    match = Match(Strategy.Random, Strategy.SuspiciousTitForTat, rounds=5)
+    match.simulate()
+
+    print(*match.history, sep="\n")
+    print(match.p1.score, match.p2.score)
+
 
 if __name__ == "__main__":
     main()
