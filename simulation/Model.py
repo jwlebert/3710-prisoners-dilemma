@@ -25,3 +25,27 @@ class GeneticAlgorithm(Model): # population
             new_pop.append(GeneticIndividual(chromosome))
         
         self.population = new_pop
+
+    def select_parents(self): # roulette wheel selection
+        total_fitness = 0
+        for individual in self.population:
+            total_fitness += individual.fitness
+
+        # here we combine probability calculation and selection for efficiency
+        prob1, p1 = random.random(), None # parent 1 prob
+        prob2, p2 = random.random(), None # parent 2 prob
+
+        cumulative: float = 0.0
+        for individual in self.population:
+            prob: float = individual.fitness / total_fitness
+            cumulative += prob
+            
+            if p1 is None and cumulative >= prob1:
+                p1 = individual
+            if p2 is None and cumulative >= prob2:
+                p2 = individual
+
+            if p1 is not None and p2 is not None:
+                break
+        
+        return (p1, p2)
