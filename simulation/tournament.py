@@ -1,0 +1,82 @@
+import itertools
+import matplotlib.pyplot as plot
+import pandas as pd
+from Match import Match
+from Strategy import (
+    AlwaysCooperate,
+    AlwaysDefect,
+    TitForTat,
+    SuspiciousTitForTat,
+    Random,
+)
+
+strategies = [AlwaysCooperate, AlwaysDefect, TitForTat, SuspiciousTitForTat, Random]
+
+
+def tournament(strategies, rounds=100):
+    results = {}
+
+    for strat1, strat2 in itertools.product(strategies, repeat=2):
+        match = Match(strat1, strat2, rounds)
+        match.simulate()
+
+        score1, score2 = match.p1.score / rounds, match.p2.score / rounds
+
+        results[(strat1.__name__, strat2.__name__)] = (score1, score2)
+
+    return results
+
+
+# def plot_results(results):
+#     fig, ax = plot.subplots()
+#     for (strat1, strat2), (score1, score2) in results.items():
+#         ax.bar(f"{strat1} vs {strat2}", score1, label=f"{strat1} score", alpha=0.6)
+#         ax.bar(f"{strat1} vs {strat2}", score2, label=f"{strat2} score", alpha=0.6, bottom=score1)
+
+#     ax.set_xlabel('Strategy Pairs')
+#     ax.set_ylabel('Scores')
+#     ax.set_title('Tournament Results')
+#     ax.legend()
+#     plot.xticks(rotation=90)
+#     plot.tight_layout()
+#     plot.show()
+
+
+def table(results):
+    strategies = set()
+    for strat1, strat2 in results.keys():
+        strategies.add(strat1)
+        strategies.add(strat2)
+
+    strategies = sorted(strategies)
+    data = {strat: {s: 0 for s in strategies} for strat in strategies}
+
+    for (strat1, strat2), (score1, score2) in results.items():
+        data[strat1][strat2] = score1
+        data[strat1][strat2] = score2
+
+    frame = pd.DataFrame(data)
+    frame["Avg"] = frame.mean(axis=1)
+
+    frame = frame.round(2)
+    print(frame)
+
+    fig, ax = plot.subplots()
+    ax.axis("tight")
+    ax.axis("off")
+    table = ax.table(
+        cellText=frame.values,
+        colLabels=frame.columns,
+        rowLabels=frame.index,
+        cellLoc="center",
+        loc="center",
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+    plot.show()
+
+
+if __name__ == "__main__":
+    results = tournament(strategies)
+    table(results)
