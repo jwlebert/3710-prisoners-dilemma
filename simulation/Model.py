@@ -1,5 +1,5 @@
 import random
-from typing import List
+from typing import List, Tuple
 
 
 class Model:
@@ -26,7 +26,7 @@ class GeneticAlgorithm(Model): # population
         
         self.population = new_pop
 
-    def select_parents(self): # roulette wheel selection
+    def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
         total_fitness = 0
         for individual in self.population:
             total_fitness += individual.fitness
@@ -49,12 +49,24 @@ class GeneticAlgorithm(Model): # population
                 break
         
         return (p1, p2)
+
+    # random point crossover
+    def crossover(self, parents: Tuple[GeneticIndividual, GeneticIndividual]) -> Tuple[GeneticIndividual, GeneticIndividual]:
+        p1, p2 = parents
+
+        crossover_index = random.randint(1, self.gene_bit_len - 1)
+        crossover_mask = (1 << crossover_index) - 1
+
+        c1 = (p1 & ~crossover_mask) | (p2 & crossover_mask)
+        c2 = (p2 & ~crossover_mask) | (p1 & crossover_mask)
+
+        return (c1, c2)
     
-    def mutate(self, individual: GeneticIndividual):
+    def mutate(self, individual: GeneticIndividual) -> int:
         mutated_chromosome = individual.chromosome
         for i in range(self.gene_bit_len):
             if (random.random > self.mutation_rate): continue
 
             bit = 1 << i
             mutated_chromosome = mutated_chromosome ^ bit
-        individual.chromosome = mutated_chromosome
+        return mutated_chromosome
