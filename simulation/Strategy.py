@@ -73,6 +73,18 @@ class GenerousTitForTat(Strategy):
             return Action.COOPERATE
 
 
+class Pavlov(Strategy):
+    def next_move(self):
+        if len(self.opp_history) == 0:
+            return Action.COOPERATE
+        elif self.opp_history[-1] == self.match.history[-1]:
+            return self.match_history[-1]
+        elif self.opp_history[-1] == Action.DEFECT:
+            return Action.DEFECT
+        else:
+            return Action.COOPERATE
+
+
 class Random(Strategy):
     def next_move(self):
         return random.choice([Action.DEFECT, Action.COOPERATE])

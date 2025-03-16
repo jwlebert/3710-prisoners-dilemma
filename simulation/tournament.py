@@ -13,6 +13,7 @@ from Strategy import (
     SuspiciousTitForTat,
     Random,
     GenerousTitForTat,
+    Pavlov,
 )
 
 strategies = [
@@ -23,6 +24,7 @@ strategies = [
     SuspiciousTitForTat,
     Random,
     GenerousTitForTat,
+    Pavlov,
 ]
 
 
