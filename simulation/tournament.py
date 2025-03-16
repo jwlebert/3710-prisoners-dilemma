@@ -9,11 +9,19 @@ from Strategy import (
     AlwaysCooperate,
     AlwaysDefect,
     TitForTat,
+    TitFor2Tat,
     SuspiciousTitForTat,
     Random,
 )
 
-strategies = [AlwaysCooperate, AlwaysDefect, TitForTat, SuspiciousTitForTat, Random]
+strategies = [
+    AlwaysCooperate,
+    AlwaysDefect,
+    TitForTat,
+    TitFor2Tat,
+    SuspiciousTitForTat,
+    Random,
+]
 
 
 def tournament(strategies, rounds=100):
