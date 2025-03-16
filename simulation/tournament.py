@@ -1,6 +1,9 @@
+# %%
 import itertools
 import matplotlib.pyplot as plot
 import pandas as pd
+import seaborn as sns
+
 from Match import Match
 from Strategy import (
     AlwaysCooperate,
@@ -27,21 +30,7 @@ def tournament(strategies, rounds=100):
     return results
 
 
-# def plot_results(results):
-#     fig, ax = plot.subplots()
-#     for (strat1, strat2), (score1, score2) in results.items():
-#         ax.bar(f"{strat1} vs {strat2}", score1, label=f"{strat1} score", alpha=0.6)
-#         ax.bar(f"{strat1} vs {strat2}", score2, label=f"{strat2} score", alpha=0.6, bottom=score1)
-
-#     ax.set_xlabel('Strategy Pairs')
-#     ax.set_ylabel('Scores')
-#     ax.set_title('Tournament Results')
-#     ax.legend()
-#     plot.xticks(rotation=90)
-#     plot.tight_layout()
-#     plot.show()
-
-
+# %%
 def table(results):
     strategies = set()
     for strat1, strat2 in results.keys():
@@ -76,7 +65,19 @@ def table(results):
     table.scale(1.2, 1.2)
     plot.show()
 
+    return frame
 
+
+# %%
+def heatmap(frame):
+    sns.heatmap(frame, annot=True, cmap="coolwarm", cbar=True)
+    plot.show()
+
+
+# %%
 if __name__ == "__main__":
     results = tournament(strategies)
-    table(results)
+    frame = table(results)
+    heatmap(frame)
+
+# %%
