@@ -1,4 +1,4 @@
-from Model import GeneticAlgorithm
+from simulation.OptimizationAlgorithm import GeneticAlgorithm
 
 def main():
     ga = GeneticAlgorithm()

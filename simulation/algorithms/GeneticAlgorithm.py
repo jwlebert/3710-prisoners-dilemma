@@ -1,16 +1,8 @@
 import random
-from typing import List, Tuple
+from typing import Tuple
 
-
-class Model:
-    def __init__(self):
-        self.iteration: int = 0
-
-    def step():
-        pass
-
-    def best_strategy():
-        pass
+from OptimizationAlgorithm import OptimizationAlgorithm
+from Strategy import Strategy
 
 class GeneticIndividual: # individual agent
     def __init__(self, chromosome: int):
@@ -24,7 +16,7 @@ class GeneticIndividual: # individual agent
         
         return self.__fitness
 
-class GeneticAlgorithm(Model): # population
+class GeneticAlgorithm(OptimizationAlgorithm): # population
     def __init__(self, pop_size: int = 20, mutation_rate: float = 0.001, memory_depth: int = 3):
         super().__init__()
         
@@ -61,7 +53,10 @@ class GeneticAlgorithm(Model): # population
         self.iteration += 1
     
     def best_strategy(self):
-        return sorted(self.population, key=lambda l: l.fitness)[0]
+        best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness)[0]
+        best_chromosome = best_individual.chromosome
+
+        strategy = Strategy()
 
     def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
         total_fitness = 0
