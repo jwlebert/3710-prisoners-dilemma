@@ -71,6 +71,7 @@ def table(results):
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     table.scale(1.2, 1.2)
+    table.auto_set_column_width(col=list(range(len(frame.columns))))
     plot.show()
 
     return frame
