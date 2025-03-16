@@ -12,6 +12,7 @@ from Strategy import (
     TitFor2Tat,
     SuspiciousTitForTat,
     Random,
+    GenerousTitForTat,
 )
 
 strategies = [
@@ -21,10 +22,11 @@ strategies = [
     TitFor2Tat,
     SuspiciousTitForTat,
     Random,
+    GenerousTitForTat,
 ]
 
 
-def tournament(strategies, rounds=100):
+def tournament(strategies, rounds=1000):
     results = {}
 
     for strat1, strat2 in itertools.product(strategies, repeat=2):

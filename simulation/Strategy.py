@@ -59,6 +59,20 @@ class SuspiciousTitForTat(Strategy):
             return self.opp_history[-1]
 
 
+class GenerousTitForTat(Strategy):
+    def next_move(self):
+        if len(self.opp_history) == 0:
+            return Action.COOPERATE
+        # Forgive with probability of 0.1 (generally considered good in research)
+        elif self.opp_history[-1] == Action.DEFECT:
+            if random.random() < 0.1:
+                return Action.COOPERATE
+            else:
+                return Action.DEFECT
+        else:
+            return Action.COOPERATE
+
+
 class Random(Strategy):
     def next_move(self):
         return random.choice([Action.DEFECT, Action.COOPERATE])
