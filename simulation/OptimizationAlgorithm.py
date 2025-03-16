@@ -14,15 +14,18 @@ class OptimizationAlgorithm:
         pass
 
 class BitArrayStrategy(Strategy):
-    def __init__(self, match: Match, move_depth: int, bit_array: int):
+    def __init__(self, match: Match, move_depth: int = 1, bit_array: int = 0):
         super().__init__(match)
+        self.set_params(bit_array, move_depth)
 
+    def set_params(self, bit_array: int, move_depth: int):
         self.move_depth: int = move_depth
         self.move_array_size: int = move_depth * 2
         self.bit_array_size: int = 2 ** (self.move_array_size)
 
         self.bit_array: int = bit_array
         self.move_index: int = 0
+        
 
     def step_move_index(self, move: Tuple[Action, Action]) -> int:
         move_bits = 2 * move[0].value + move[1].value

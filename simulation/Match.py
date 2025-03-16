@@ -1,6 +1,9 @@
 from typing import List, Tuple
+
 import Strategy
+from OptimizationAlgorithm import BitArrayStrategy
 from Strategy import Action
+
 
 class Match:
     def __init__(self, s1: Strategy, s2: Strategy, rounds=100):
@@ -38,3 +41,8 @@ class Match:
     def simulate(self):
         for i in range(self.rounds):
             self.step_round()
+
+class OptimizedMatch(Match):
+    def __init__(self, opponent: Strategy, bit_array: int, move_depth: int, rounds=100):
+        super().__init__(BitArrayStrategy, opponent, rounds=rounds)
+        self.p1.set_params(bit_array, move_depth)
