@@ -1,7 +1,7 @@
 import random
 from typing import List, Tuple
 
-from OptimizationAlgorithm import OptimizationAlgorithm, OptimizedMatch
+from OptimizationAlgorithm import OptimizationAlgorithm, OptimizedTournament
 from Strategy import AlwaysCooperate
 
 class GeneticIndividual: # individual agent
@@ -13,9 +13,8 @@ class GeneticIndividual: # individual agent
     @property
     def fitness(self):
         if self.__fitness is None:
-            match = OptimizedMatch(AlwaysCooperate, self.chromosome, self.memory_depth, rounds=25)
-            match.simulate()
-            self.__fitness = match.p1.score
+            tournament = OptimizedTournament(self.chromosome, self.memory_depth, rounds=50)
+            self.__fitness = tournament.get_score()
         
         return self.__fitness
 
@@ -56,8 +55,8 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         self.iteration += 1
     
     def best_strategy(self):
-        best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness)[0]
-        return best_individual.chromosome
+        best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness, reverse=True)[0]
+        return best_individual
 
     def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
         total_fitness = 0
