@@ -29,7 +29,7 @@ strategies = [
 ]
 
 from OptimizationAlgorithm import BitArrayStrategy
-from GeneticOptimization import GeneticOptimization
+from Experiments import GeneticExperiments
 
 
 def tournament(strategies, rounds=100):
@@ -39,7 +39,7 @@ def tournament(strategies, rounds=100):
 
     # print(strategies)
     # Get best genetic algorithm strategy
-    genetic_strategy = GeneticOptimization()
+    genetic_strategy = GeneticExperiments()
 
     strategies.append(
         (
