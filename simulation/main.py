@@ -27,6 +27,5 @@ def main():
     print(*match.history, sep="\n")
     print(match.p1.score, match.p2.score)
 
-
 if __name__ == "__main__":
     main()
