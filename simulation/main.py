@@ -1,6 +1,6 @@
-from Match import Match, OptimizedMatch
+from Match import Match
+from OptimizationAlgorithm import OptimizedMatch
 import Strategy
-from OptimizationAlgorithm import BitArrayStrategy
 
 def main():
     match = Match(Strategy.AlwaysCooperate, Strategy.AlwaysCooperate, rounds=5)

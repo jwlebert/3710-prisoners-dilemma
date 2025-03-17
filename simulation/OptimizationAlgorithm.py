@@ -1,7 +1,6 @@
-from dataclasses import dataclass
 from typing import Tuple
-
-from Strategy import Strategy, Match, Action
+from Match import Match
+from Strategy import Action, Strategy
 
 class OptimizationAlgorithm:
     def __init__(self):
@@ -40,14 +39,19 @@ class BitArrayStrategy(Strategy):
         return move_index
     
     def next_move(self) -> Action:
-        print("yes")
+        # print("yes")
         if len(self.history):
             self.move_index = self.step_move_index(self.history[-1])
         
         selected_bit = 1 << self.move_index
         result = selected_bit & self.bit_array
 
-        print(self.history[-1] if len(self.history) else None)
-        print(bin(self.move_index), self.move_index, bin(self.bit_array), result)
+        # print(self.history[-1] if len(self.history) else None)
+        # print(bin(self.move_index), self.move_index, bin(self.bit_array), result)
 
         return Action.COOPERATE if result == 0 else Action.DEFECT
+
+class OptimizedMatch(Match):
+    def __init__(self, opponent: Strategy, bit_array: int, move_depth: int, rounds=100):
+        super().__init__(BitArrayStrategy, opponent, rounds=rounds)
+        self.p1.set_params(bit_array, move_depth)
