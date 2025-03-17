@@ -7,15 +7,17 @@ class HillClimbing(OptimizationAlgorithm):
 
         # random start
         self.bit_arr: int = random.randint(0, (2 ** self.bit_arr_len) - 1)
-        tournament = OptimizedTournament(self.bit_arr, self.memory_depth, rounds=50)
-        self.fitness = tournament.get_score()
+        self.fitness: float = None
 
-    def step(self):
+    def step(self, rounds: int):
+        if self.fitness is None:
+            self.fitness = self.evaluate(self.bit_arr, rounds)
+
         neighbours = [self.bit_flip(i) for i in range(self.bit_arr_len)]
-        for n in neighbours: print(n, self.evaluate(n))
+        for n in neighbours: print(n, self.evaluate(n, rounds))
 
-        max_neighbour = max(neighbours, key=lambda n: self.evaluate(n))
-        highest_fitness = self.evaluate(max_neighbour)
+        max_neighbour = max(neighbours, key=lambda n: self.evaluate(n, rounds))
+        highest_fitness = self.evaluate(max_neighbour, rounds)
 
         if highest_fitness <= self.fitness:
             return self.iteration
@@ -26,9 +28,12 @@ class HillClimbing(OptimizationAlgorithm):
         self.iteration += 1
 
         return None
+    
+    def best_strategy(self):
+        return self.bit_arr
         
-    def evaluate(self, bit_arr):
-        tournament = OptimizedTournament(bit_arr, self.memory_depth, rounds=50)
+    def evaluate(self, bit_arr, rounds):
+        tournament = OptimizedTournament(bit_arr, self.memory_depth, rounds=rounds)
         return tournament.get_score()
 
     def bit_flip(self, bit_index: int) -> int:

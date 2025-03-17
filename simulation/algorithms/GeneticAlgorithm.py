@@ -19,14 +19,12 @@ class GeneticIndividual: # individual agent
         return self.__fitness
 
 class GeneticAlgorithm(OptimizationAlgorithm): # population
-    def __init__(self, memory_depth: int = 3, rounds: int = 50, pop_size: int = 20, mutation_rate: float = 0.001):
-        super().__init__(memory_depth=memory_depth, rounds=rounds)
+    def __init__(self, memory_depth: int = 3, pop_size: int = 20, mutation_rate: float = 0.001):
+        super().__init__(memory_depth=memory_depth)
         
         self.population: List[GeneticIndividual] = []
         self.pop_size: int = pop_size # best when even
         self.mutation_rate: float = mutation_rate
-
-        self.initial_sample()
     
     def initial_sample(self):
         new_pop = []
@@ -36,7 +34,11 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         
         self.population = new_pop
 
-    def step(self) -> None:
+    def step(self, rounds: int) -> None:
+        if not len(self.population):
+            self.rounds = rounds
+            self.initial_sample()
+            
         next_generation = []
 
         for _ in range(0, self.pop_size // 2):

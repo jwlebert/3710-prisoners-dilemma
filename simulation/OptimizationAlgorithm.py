@@ -66,25 +66,24 @@ class OptimizationAlgorithm:
         self.memory_depth: int = memory_depth
         self.bit_arr_len: int = 2 ** (2 * memory_depth)
 
-
-    def step():
+    def step(self, rounds: int):
         pass
 
     def best_strategy() -> int:
         pass
 
-    def train(self, generations: int = 1000, logging: bool = False, log_freq: int = 100) -> BitArrayStrategy:
+    def train(self, generations: int, rounds: int, logging: bool = False, log_freq: int = 100) -> BitArrayStrategy:
         if not logging:
             for _ in range(generations + 1): 
-                if self.step() is not None:
-                    return
+                if self.step(rounds) is not None:
+                    return self.best_strategy()
         else:
             for gen in range(generations + 1):
                 if gen % log_freq == 0:
                     pass # implement logging
 
-                if self.step() is not None:
-                    return
+                if self.step(rounds) is not None:
+                    return self.best_strategy()
         
         return self.best_strategy()
 
