@@ -1,11 +1,11 @@
-from simulation.OptimizationAlgorithm import GeneticAlgorithm
+from algorithms.GeneticAlgorithm import GeneticAlgorithm
 
 def main():
     ga = GeneticAlgorithm()
-    for i in range(1001):
-        if i % 10 == 0:
+    for i in range(5001):
+        if i % 1000 == 0:
             print(f"Generation {i}:")
-            print(f"Best : {ga.best_strategy()} {ga.best_strategy().fitness}")
+            print(f"Best : {bin(ga.best_strategy())}")
             for individual in ga.population:
                 print(bin(individual.chromosome), individual.fitness)
         

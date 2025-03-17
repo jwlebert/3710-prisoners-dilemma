@@ -1,18 +1,21 @@
 import random
-from typing import Tuple
+from typing import List, Tuple
 
-from OptimizationAlgorithm import OptimizationAlgorithm
-from Strategy import Strategy
+from OptimizationAlgorithm import OptimizationAlgorithm, OptimizedMatch
+from Strategy import AlwaysCooperate
 
 class GeneticIndividual: # individual agent
-    def __init__(self, chromosome: int):
+    def __init__(self, chromosome: int, memory_depth: int):
         self.chromosome: int = chromosome
+        self.memory_depth: int = memory_depth
         self.__fitness: int = None
     
     @property
     def fitness(self):
         if self.__fitness is None:
-            self.__fitness = bin(self.chromosome).count('1')
+            match = OptimizedMatch(AlwaysCooperate, self.chromosome, self.memory_depth, rounds=25)
+            match.simulate()
+            self.__fitness = match.p1.score
         
         return self.__fitness
 
@@ -32,7 +35,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         new_pop = []
         for _ in range(self.pop_size):
             chromosome = random.randint(0, (2 ** self.gene_bit_len) - 1)
-            new_pop.append(GeneticIndividual(chromosome))
+            new_pop.append(GeneticIndividual(chromosome, self.memory_depth))
         
         self.population = new_pop
 
@@ -54,9 +57,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
     
     def best_strategy(self):
         best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness)[0]
-        best_chromosome = best_individual.chromosome
-
-        strategy = Strategy()
+        return best_individual.chromosome
 
     def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
         total_fitness = 0
@@ -92,8 +93,8 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         chromo1 = (p1.chromosome & ~crossover_mask) | (p2.chromosome & crossover_mask)
         chromo2 = (p2.chromosome & ~crossover_mask) | (p1.chromosome & crossover_mask)
 
-        c1 = GeneticIndividual(chromo1)
-        c2 = GeneticIndividual(chromo2)
+        c1 = GeneticIndividual(chromo1, self.memory_depth)
+        c2 = GeneticIndividual(chromo2, self.memory_depth)
 
         return (c1, c2)
     
