@@ -4,40 +4,39 @@ from typing import List, Tuple
 from OptimizationAlgorithm import OptimizationAlgorithm, OptimizedTournament
 
 class GeneticIndividual: # individual agent
-    def __init__(self, chromosome: int, memory_depth: int):
+    def __init__(self, chromosome: int, memory_depth: int, rounds: int):
         self.chromosome: int = chromosome
         self.memory_depth: int = memory_depth
+        self.rounds: int = rounds
         self.__fitness: int = None
     
     @property
     def fitness(self):
         if self.__fitness is None:
-            tournament = OptimizedTournament(self.chromosome, self.memory_depth, rounds=50)
+            tournament = OptimizedTournament(self.chromosome, self.memory_depth, rounds=self.rounds)
             self.__fitness = tournament.get_score()
         
         return self.__fitness
 
 class GeneticAlgorithm(OptimizationAlgorithm): # population
-    def __init__(self, pop_size: int = 20, mutation_rate: float = 0.001, memory_depth: int = 3):
-        super().__init__()
+    def __init__(self, memory_depth: int = 3, rounds: int = 50, pop_size: int = 20, mutation_rate: float = 0.001):
+        super().__init__(memory_depth=memory_depth, rounds=rounds)
         
         self.population: List[GeneticIndividual] = []
         self.pop_size: int = pop_size # best when even
         self.mutation_rate: float = mutation_rate
-        self.memory_depth: int = memory_depth
-        self.gene_bit_len: int = 2 ** (2 * memory_depth) # number of bits in chromosomes
 
         self.initial_sample()
     
     def initial_sample(self):
         new_pop = []
         for _ in range(self.pop_size):
-            chromosome = random.randint(0, (2 ** self.gene_bit_len) - 1)
-            new_pop.append(GeneticIndividual(chromosome, self.memory_depth))
+            chromosome = random.randint(0, (2 ** self.bit_arr_len) - 1)
+            new_pop.append(GeneticIndividual(chromosome, self.memory_depth, self.rounds))
         
         self.population = new_pop
 
-    def step(self):
+    def step(self) -> None:
         next_generation = []
 
         for _ in range(0, self.pop_size // 2):
@@ -52,6 +51,8 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         
         self.population = next_generation
         self.iteration += 1
+
+        return None
     
     def best_strategy(self):
         best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness, reverse=True)[0]
@@ -85,20 +86,20 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
     def crossover(self, parents: Tuple[GeneticIndividual, GeneticIndividual]) -> Tuple[GeneticIndividual, GeneticIndividual]:
         p1, p2 = parents
 
-        crossover_index = random.randint(1, self.gene_bit_len - 1)
+        crossover_index = random.randint(1, self.bit_arr_len - 1)
         crossover_mask = (1 << crossover_index) - 1
 
         chromo1 = (p1.chromosome & ~crossover_mask) | (p2.chromosome & crossover_mask)
         chromo2 = (p2.chromosome & ~crossover_mask) | (p1.chromosome & crossover_mask)
 
-        c1 = GeneticIndividual(chromo1, self.memory_depth)
-        c2 = GeneticIndividual(chromo2, self.memory_depth)
+        c1 = GeneticIndividual(chromo1, self.memory_depth, self.rounds)
+        c2 = GeneticIndividual(chromo2, self.memory_depth, self.rounds)
 
         return (c1, c2)
     
     def mutate(self, individual: GeneticIndividual) -> int:
         mutated_chromosome = individual.chromosome
-        for i in range(self.gene_bit_len):
+        for i in range(self.bit_arr_len):
             if (random.random() > self.mutation_rate): continue
 
             bit = 1 << i

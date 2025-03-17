@@ -59,8 +59,13 @@ class BitArrayStrategy(Strategy):
         return Action.COOPERATE if result == 0 else Action.DEFECT
 
 class OptimizationAlgorithm:
-    def __init__(self):
+    def __init__(self, memory_depth: int = 3, rounds: int = 50):
         self.iteration: int = 0
+        
+        self.rounds: int = rounds
+        self.memory_depth: int = memory_depth
+        self.bit_arr_len: int = 2 ** (2 * memory_depth)
+
 
     def step():
         pass
@@ -70,13 +75,16 @@ class OptimizationAlgorithm:
 
     def train(self, generations: int = 1000, logging: bool = False, log_freq: int = 100) -> BitArrayStrategy:
         if not logging:
-            for _ in range(generations + 1): self.step()
+            for _ in range(generations + 1): 
+                if self.step() is not None:
+                    return
         else:
             for gen in range(generations + 1):
                 if gen % log_freq == 0:
                     pass # implement logging
 
-                self.step()
+                if self.step() is not None:
+                    return
         
         return self.best_strategy()
 

@@ -1,7 +1,8 @@
 from algorithms.GeneticAlgorithm import GeneticAlgorithm
+from algorithms.HillClimbing import HillClimbing
 
 def main():
-    ga = GeneticAlgorithm(pop_size=100, mutation_rate=0.001, memory_depth=3)
+    ga = GeneticAlgorithm(memory_depth=3, pop_size=100, mutation_rate=0.001)
     s = ga.train(generations=100)
     print(bin(s))
 
