@@ -14,7 +14,6 @@ class HillClimbing(OptimizationAlgorithm):
             self.fitness = self.evaluate(self.bit_arr, rounds)
 
         neighbours = [self.bit_flip(i) for i in range(self.bit_arr_len)]
-        for n in neighbours: print(n, self.evaluate(n, rounds))
 
         max_neighbour = max(neighbours, key=lambda n: self.evaluate(n, rounds))
         highest_fitness = self.evaluate(max_neighbour, rounds)
