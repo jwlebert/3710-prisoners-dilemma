@@ -15,6 +15,7 @@ from Strategy import (
     GenerousTitForTat,
     Pavlov,
 )
+from algorithms.GeneticAlgorithm import GeneticAlgorithm
 
 strategies = [
     AlwaysCooperate,
