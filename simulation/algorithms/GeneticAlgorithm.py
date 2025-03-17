@@ -2,7 +2,6 @@ import random
 from typing import List, Tuple
 
 from OptimizationAlgorithm import OptimizationAlgorithm, OptimizedTournament
-from Strategy import AlwaysCooperate
 
 class GeneticIndividual: # individual agent
     def __init__(self, chromosome: int, memory_depth: int):
@@ -56,7 +55,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
     
     def best_strategy(self):
         best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness, reverse=True)[0]
-        return best_individual
+        return best_individual.chromosome
 
     def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
         total_fitness = 0

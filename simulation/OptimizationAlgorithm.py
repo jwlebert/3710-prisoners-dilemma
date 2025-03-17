@@ -24,16 +24,6 @@ strategies = [
     Pavlov,
 ]
 
-class OptimizationAlgorithm:
-    def __init__(self):
-        self.iteration: int = 0
-
-    def step():
-        pass
-
-    def generate_best_strategy() -> Strategy:
-        pass
-
 class BitArrayStrategy(Strategy):
     def __init__(self, match: Match, move_depth: int = 1, bit_array: int = 0):
         super().__init__(match)
@@ -67,6 +57,28 @@ class BitArrayStrategy(Strategy):
         result = selected_bit & self.bit_array
 
         return Action.COOPERATE if result == 0 else Action.DEFECT
+
+class OptimizationAlgorithm:
+    def __init__(self):
+        self.iteration: int = 0
+
+    def step():
+        pass
+
+    def best_strategy() -> int:
+        pass
+
+    def train(self, generations: int = 1000, logging: bool = False, log_freq: int = 100) -> BitArrayStrategy:
+        if not logging:
+            for _ in range(generations + 1): self.step()
+        else:
+            for gen in range(generations + 1):
+                if gen % log_freq == 0:
+                    pass # implement logging
+
+                self.step()
+        
+        return self.best_strategy()
 
 class OptimizedMatch(Match):
     def __init__(self, opponent: Strategy, bit_array: int, move_depth: int = 3, rounds: int = 100):
