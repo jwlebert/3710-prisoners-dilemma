@@ -59,6 +59,9 @@ def table(results):
     frame = pd.DataFrame(data)
     frame["Avg"] = frame.mean(axis=1)
 
+    # Sorting by avg
+    frame = frame.sort_values(by="Avg", ascending=False)
+
     frame = frame.round(2)
     print(frame)
 
