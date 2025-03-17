@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List
+from typing import List, Tuple
 import random
 
 import Match
@@ -12,7 +12,7 @@ class Strategy:
     def __init__(self, match: Match):
         self.match: Match = match
         self.score: int = 0
-        self.opp_history: List[Action] = []
+        self.history: List[Action] = [] # (player, opponent) <- move format
 
     def next_move(self) -> Action:
         pass
@@ -27,17 +27,17 @@ class AlwaysDefect(Strategy):
 
 class TitForTat(Strategy):
     def next_move(self):
-        if len(self.opp_history) == 0:
+        if len(self.history) == 0:
             return Action.COOPERATE
         else:
-            return self.opp_history[-1]
+            return self.history[-1][1]
         
 class SuspiciousTitForTat(Strategy):
     def next_move(self):
-        if len(self.opp_history) == 0:
+        if len(self.history) == 0:
             return Action.DEFECT
         else:
-            return self.opp_history[-1]
+            return self.history[-1][1]
 
 class Random(Strategy):
     def next_move(self):

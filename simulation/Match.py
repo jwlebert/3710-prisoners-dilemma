@@ -1,6 +1,6 @@
 from typing import List, Tuple
-import Strategy
-from Strategy import Action
+
+from Strategy import Strategy, Action
 
 class Match:
     def __init__(self, s1: Strategy, s2: Strategy, rounds=100):
@@ -19,8 +19,8 @@ class Match:
         self.p2.score += d2
 
         self.history.append(actions)
-        self.p1.opp_history.append(act2)
-        self.p2.opp_history.append(act1)
+        self.p1.history.append(actions)
+        self.p2.history.append(actions[::-1])
 
         self.round += 1
     

@@ -1,4 +1,5 @@
 from Match import Match
+from OptimizationAlgorithm import OptimizedMatch
 import Strategy
 
 def main():
@@ -15,6 +16,12 @@ def main():
     print(match.p1.score, match.p2.score)
 
     match = Match(Strategy.Random, Strategy.SuspiciousTitForTat, rounds=5)
+    match.simulate()
+
+    print(*match.history, sep="\n")
+    print(match.p1.score, match.p2.score)
+
+    match = OptimizedMatch(Strategy.AlwaysCooperate, 3, 1, rounds=5)
     match.simulate()
 
     print(*match.history, sep="\n")
