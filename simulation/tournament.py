@@ -28,17 +28,46 @@ strategies = [
     Pavlov,
 ]
 
+from OptimizationAlgorithm import BitArrayStrategy
+from GeneticOptimization import GeneticOptimization
 
-def tournament(strategies, rounds=1000):
+
+def tournament(strategies, rounds=100):
     results = {}
 
-    for strat1, strat2 in itertools.product(strategies, repeat=2):
+    strategies = [(x, x.__name__) for x in strategies]  # turn them all into tuples
+
+    # print(strategies)
+    # Get best genetic algorithm strategy
+    genetic_strategy = GeneticOptimization()
+
+    strategies.append(
+        (
+            BitArrayStrategy,
+            "GeneticAlgorithm",
+            genetic_strategy,
+            3,
+        )
+    )
+
+    for s1, s2 in itertools.product(strategies, repeat=2):
+        strat1, s1name, *_ = s1
+        strat2, s2name, *_ = s2
         match = Match(strat1, strat2, rounds)
+
+        if isinstance(match.p1, BitArrayStrategy):
+            match.p1.__name__ = s1[1]
+            match.p1.set_params(s1[2], s1[3])
+
+        if isinstance(match.p2, BitArrayStrategy):
+            match.p2.__name__ = s2[1]
+            match.p2.set_params(s2[2], s2[3])
+
         match.simulate()
 
         score1, score2 = match.p1.score / rounds, match.p2.score / rounds
 
-        results[(strat1.__name__, strat2.__name__)] = (score1, score2)
+        results[(s1name, s2name)] = (score1, score2)
 
     return results
 
@@ -53,8 +82,7 @@ def table(results):
     strategies = sorted(strategies)
     data = {strat: {s: 0 for s in strategies} for strat in strategies}
 
-    for (strat1, strat2), (score1, score2) in results.items():
-        data[strat1][strat2] = score1
+    for (strat1, strat2), (_, score2) in results.items():
         data[strat1][strat2] = score2
 
     frame = pd.DataFrame(data)
