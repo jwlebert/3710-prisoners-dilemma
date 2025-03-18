@@ -3,8 +3,14 @@ from algorithms.HillClimbing import HillClimbing
 from OptimizationAlgorithm import OptimizedTournament
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
+
 import time
 import logging
+
+from multiprocessing import Pool
+import os
+
 
 logging.basicConfig(filename="experiment_logs.txt", level=logging.INFO, force=True)
 
@@ -59,61 +65,167 @@ def create_table(df, title):
     plt.show()
 
 
+def create_parameter_graphs(df, param_name, title):
+    # Create a single figure
+    plt.figure(figsize=(10, 6))
+
+    # Convert parameter values to strings for consistent color mapping
+    df[param_name] = df[param_name].astype(str)
+
+    # Explode the scores list into separate rows
+    plot_df = df.explode("scores")
+    plot_df["scores"] = plot_df["scores"].astype(float)
+
+    # Calculate average scores for each parameter value
+    avg_scores = plot_df.groupby(param_name)["scores"].mean()
+
+    # Create the boxplot with updated syntax
+    sns.boxplot(
+        data=plot_df,
+        x=param_name,
+        y="scores",
+        hue=param_name,  # Add hue parameter
+        width=0.5,
+        saturation=0.7,
+        legend=False,  # Hide redundant legend
+    )
+
+    # Add individual points
+    sns.swarmplot(
+        x=param_name,
+        y="scores",
+        data=plot_df,
+        size=8,
+        color="black",
+        alpha=0.6,
+        edgecolor="white",
+        linewidth=0.5,
+    )
+
+    # Add average score labels
+    ax = plt.gca()
+    for i, avg in enumerate(avg_scores):
+        ax.text(
+            i,
+            ax.get_ylim()[1],
+            f"Avg: {avg:.2f}",
+            horizontalalignment="center",
+            verticalalignment="bottom",
+        )
+
+    # Customize the plot
+    plt.title(f"Scores Distribution by {param_name}", pad=20, fontsize=12)
+    plt.ylabel("Score")
+    plt.xlabel(param_name)
+    plt.grid(True, alpha=0.2)
+    plt.xticks(rotation=45)
+
+    # Add main title with padding
+    plt.suptitle(title, fontsize=14, y=1.05)
+
+    # Adjust layout
+    plt.tight_layout()
+    plt.show()
+
+
+def run_single_experiment(params):
+    """Helper function to run a single experiment iteration"""
+    experiment_func = params["experiment_func"]
+    func_params = params["func_params"]
+
+    iteration_start_time = time.time()
+    strategy, score = experiment_func(**func_params)
+    iteration_end_time = time.time()
+
+    return {"score": score, "time": iteration_end_time - iteration_start_time}
+
+
 def run_experiments(
     experiment_func, param_name, param_values, fixed_params, num_iterations, title
 ):
     param_results = []
+    detailed_results = []
+
     for value in param_values:
         params = fixed_params.copy()
         params[param_name] = value
-        iteration_scores = []
-        iteration_times = []
 
-        for _ in range(num_iterations):
-            iteration_start_time = time.time()
+        # Prepare parameters for parallel processing
+        experiment_params = [
+            {"experiment_func": experiment_func, "func_params": params}
+            for _ in range(num_iterations)
+        ]
 
-            strategy, score = experiment_func(**params)
-            iteration_scores.append(score)
+        # Use number of CPU cores minus 1 to avoid overloading
+        num_processes = max(1, os.cpu_count() - 1)
 
-            iteration_end_time = time.time()
-            iteration_time = iteration_end_time - iteration_start_time
-            iteration_times.append(iteration_time)
-            logging.info(
-                f"Iteration time: {iteration_time:.2f} seconds, {param_name}: {value}, score: {score}"
-            )
+        # Run experiments in parallel
+        with Pool(processes=num_processes) as pool:
+            iteration_results = pool.map(run_single_experiment, experiment_params)
 
-        avg_score = sum(iteration_scores) / num_iterations
-        avg_time = sum(iteration_times) / num_iterations
-        o = {
-            param_name: value,
-            "avg_time": round(avg_time, 2),
-            "avg_score": round(avg_score, 2),
-        }
-        param_results.append(o)
+        # Store all scores and times
+        scores = [result["score"] for result in iteration_results]
+        times = [result["time"] for result in iteration_results]
 
-    df = pd.DataFrame(param_results)
-    df = df.sort_values(by="avg_score", ascending=False)
+        # Calculate averages
+        avg_score = (
+            sum(result["score"] for result in iteration_results) / num_iterations
+        )
+        avg_time = sum(result["time"] for result in iteration_results) / num_iterations
+
+        # Store summarized results for the table
+        param_results.append(
+            {
+                param_name: value,
+                "avg_time": round(avg_time, 2),
+                "avg_score": round(avg_score, 2),
+            }
+        )
+        # Store detailed results for the graphs
+        detailed_results.append(
+            {
+                param_name: value,
+                "scores": scores,
+                "times": times,
+            }
+        )
+
+        logging.info(
+            f"Completed {num_iterations} iterations for {param_name}: {value}, "
+            f"avg_score: {avg_score:.2f}, avg_time: {avg_time:.2f}"
+        )
+
+    # Create summary DataFrame for tables
+    summary_df = pd.DataFrame(param_results)
+    summary_df = summary_df.sort_values(by="avg_score", ascending=False)
+
+    # Create detailed DataFrame for graphs
+    detailed_df = pd.DataFrame(detailed_results)
+
     logging.info(f"Results for {param_name}:")
-    logging.info(df)
+    logging.info(summary_df)
 
-    create_table(df, title)
+    # Create table with averages
+    create_table(summary_df, f"{title} - Table")
+    # Create graphs with individual points
+    create_parameter_graphs(detailed_df, param_name, title)
 
-    return df
+    return summary_df
 
 
 def run_genetic_experiments():
     results = []
-    pop_sizes = [50, 100, 200]
-    mutation_rates = [0.001, 0.01, 0.05]
-    memory_depths = [3, 4, 5]
-    generations = [500, 1000, 2500]
+    pop_sizes = [20, 10]
+    mutation_rates = [0.01, 0.05]
+    memory_depths = [3, 4]
+    generations = [10, 20, 30]
     num_iterations = 5  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 50,
+        "pop_size": 20,
         "mutation_rate": 0.01,
         "memory_depth": 3,
-        "generations": 500,
+        "generations": 20,
     }
 
     results.append(
@@ -163,13 +275,13 @@ def run_genetic_experiments():
 
 def run_hill_climbing_experiments():
     results = []
-    memory_depths = [3, 4, 5]
-    generations = [100, 200, 500, 1000]
+    memory_depths = [3, 4]
+    generations = [100, 50]
     num_iterations = 10  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 500,
+        "generations": 100,
     }
 
     results.append(
@@ -198,8 +310,21 @@ def run_hill_climbing_experiments():
 
 # %%
 def main():
-    run_genetic_experiments()
-    run_hill_climbing_experiments()
+    print("Running Genetic Algorithm Experiments...")
+    genetic_results = run_genetic_experiments()
+
+    print("\nRunning Hill Climbing Experiments...")
+    hillclimbing_results = run_hill_climbing_experiments()
+
+    # Save results to CSV files
+    results_dir = "experiment_results"
+    os.makedirs(results_dir, exist_ok=True)
+
+    for i, df in enumerate(genetic_results):
+        df.to_csv(f"{results_dir}/genetic_experiment_{i+1}.csv", index=False)
+
+    for i, df in enumerate(hillclimbing_results):
+        df.to_csv(f"{results_dir}/hillclimbing_experiment_{i+1}.csv", index=False)
 
 
 # %%
