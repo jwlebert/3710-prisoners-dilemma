@@ -51,7 +51,7 @@ def TabuSearchExperiment(tabu_len, memory_depth, generations):
 # %%
 
 
-def create_table(df, title):
+def create_table(df, title, save_path: str):
     fig, ax = plt.subplots()
     ax.axis("tight")
     ax.axis("off")
@@ -71,10 +71,12 @@ def create_table(df, title):
 
     plt.tight_layout()
 
+    plt.savefig(f"{save_path}_table.png")
+
     plt.show()
 
 
-def create_parameter_graphs(df, param_name, title):
+def create_parameter_graphs(df, param_name, title, save_path):
     # Create a single figure
     plt.figure(figsize=(10, 6))
 
@@ -134,6 +136,7 @@ def create_parameter_graphs(df, param_name, title):
 
     # Adjust layout
     plt.tight_layout()
+    plt.savefig(f"{save_path}_param_graph.png")
     plt.show()
 
 
@@ -150,7 +153,7 @@ def run_single_experiment(params):
 
 
 def run_experiments(
-    experiment_func, param_name, param_values, fixed_params, num_iterations, title
+    experiment_func, param_name, param_values, fixed_params, num_iterations, title, save_path
 ):
     all_iterations = []  # To store individual iteration results
 
@@ -201,7 +204,7 @@ def run_experiments(
     summary_df.columns = [param_name, "avg_score", "avg_time"]
 
     # Create visual summaries
-    create_table(summary_df, f"{title} - Table")
+    create_table(summary_df, f"{title} - Table", f"{save_path}/{param_name}")
 
     # Modified line to use 'score' instead of 'scores'
     grouped_scores = results_df.groupby(param_name)[["score"]].agg(list).reset_index()
@@ -210,12 +213,13 @@ def run_experiments(
         grouped_scores,
         param_name,
         title,
+        f"{save_path}/{param_name}",
     )
 
     return results_df
 
 
-def run_genetic_experiments():
+def run_genetic_experiments(img_path: str):
     results = []
     pop_sizes = [80, 100, 150]
     mutation_rates = [0.01, 0.05, 0.001]
@@ -238,6 +242,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Population Size",
+            img_path
         )
     )
     results.append(
@@ -248,6 +253,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Mutation Rate",
+            img_path
         )
     )
 
@@ -259,6 +265,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Memory Depth",
+            img_path
         )
     )
     results.append(
@@ -269,13 +276,14 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Generations",
+            img_path
         )
     )
 
     return results
 
 
-def run_hill_climbing_experiments():
+def run_hill_climbing_experiments(img_path: str):
     results = []
     memory_depths = [3, 4, 5]
     generations = [100, 50]
@@ -294,6 +302,7 @@ def run_hill_climbing_experiments():
             fixed_params,
             num_iterations,
             "Hill Climbing - Memory Depth",
+            img_path,
         )
     )
     results.append(
@@ -304,12 +313,13 @@ def run_hill_climbing_experiments():
             fixed_params,
             num_iterations,
             "Hill Climbing - Generations",
+            img_path,
         )
     )
 
     return results
 
-def run_tabu_search_experiments():
+def run_tabu_search_experiments(img_path: str):
     results = []
     memory_depths = [3, 4, 5]
     generations = [50, 100, 250]
@@ -330,6 +340,7 @@ def run_tabu_search_experiments():
             fixed_params,
             num_iterations,
             "Tabu Search - Tabu Len",
+            img_path
         )
     )
     results.append(
@@ -340,6 +351,7 @@ def run_tabu_search_experiments():
             fixed_params,
             num_iterations,
             "Tabu Search - Memory Depth",
+            img_path
         )
     )
     results.append(
@@ -350,6 +362,7 @@ def run_tabu_search_experiments():
             fixed_params,
             num_iterations,
             "Tabu Search - Generations",
+            img_path
         )
     )
 
@@ -358,32 +371,45 @@ def run_tabu_search_experiments():
 
 # %%
 def main():
-    timestamp = time.strftime("%Y%m%d_%H%M%S")
-
-    print("Running Genetic Algorithm Experiments...")
-    genetic_results = run_genetic_experiments()
-
-    print("\nRunning Hill Climbing Experiments...")
-    hillclimbing_results = run_hill_climbing_experiments()
+    timestamp = time.strftime("%Y-%m-%d/%H:%M:%S")
 
     # Save results to CSV files
-    results_dir = "experiment_results"
-    os.makedirs(results_dir, exist_ok=True)
+    results_dir = f"experiment_results/{timestamp}"
+    # os.makedirs(results_dir, exist_ok=True)
 
     # Save each experiment's results with descriptive names
     experiment_names = {
         "genetic": ["population_size", "mutation_rate", "memory_depth", "generations"],
         "hillclimbing": ["memory_depth", "generations"],
+        "tabu": ["tabu_len", "memory_depth", "generations"],
     }
+
+    print("\nRunning Hill Climbing Experiments...")
+    os.makedirs(f"{results_dir}/hillclimbing", exist_ok=True)
+    hillclimbing_results = run_hill_climbing_experiments(f"{results_dir}/hillclimbing")
+
+    for i, df in enumerate(hillclimbing_results):
+        filename = f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+        df.to_csv(filename, index=False)
+
+
+    print("\nRunning Tabu Search Experiments...")
+    os.makedirs(f"{results_dir}/tabu", exist_ok=True)
+    tabu_search_results = run_tabu_search_experiments(f"{results_dir}/tabu")
+
+    for i, df in enumerate(tabu_search_results):
+        filename = f"{results_dir}/tabu/{experiment_names['tabu'][i]}.csv"
+        df.to_csv(filename, index=False)
+
+
+    print("Running Genetic Algorithm Experiments...")
+    os.makedirs(f"{results_dir}/genetic", exist_ok=True)
+    genetic_results = run_genetic_experiments(f"{results_dir}/genetic")
 
     for i, df in enumerate(genetic_results):
         filename = (
-            f"{results_dir}/genetic_{experiment_names['genetic'][i]}_{timestamp}.csv"
+            f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
         )
-        df.to_csv(filename, index=False)
-
-    for i, df in enumerate(hillclimbing_results):
-        filename = f"{results_dir}/hillclimbing_{experiment_names['hillclimbing'][i]}_{timestamp}.csv"
         df.to_csv(filename, index=False)
 
 
