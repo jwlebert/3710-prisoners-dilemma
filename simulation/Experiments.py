@@ -1,6 +1,7 @@
 from algorithms.GeneticAlgorithm import GeneticAlgorithm
 import matplotlib.pyplot as plt
 
+
 def GeneticExperiments():
     ga = GeneticAlgorithm(pop_size=100, mutation_rate=0.001, memory_depth=3)
     ga.train(generations=100)
