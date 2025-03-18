@@ -143,8 +143,7 @@ def run_single_experiment(params):
 def run_experiments(
     experiment_func, param_name, param_values, fixed_params, num_iterations, title
 ):
-    param_results = []
-    detailed_results = []
+    all_iterations = []  # To store individual iteration results
 
     for value in param_values:
         params = fixed_params.copy()
@@ -167,50 +166,44 @@ def run_experiments(
         scores = [result["score"] for result in iteration_results]
         times = [result["time"] for result in iteration_results]
 
-        # Calculate averages
-        avg_score = (
-            sum(result["score"] for result in iteration_results) / num_iterations
-        )
-        avg_time = sum(result["time"] for result in iteration_results) / num_iterations
+        # Add results to all_iterations
+        for score, time in zip(scores, times):
+            all_iterations.append({param_name: value, "score": score, "time": time})
 
-        # Store summarized results for the table
-        param_results.append(
-            {
-                param_name: value,
-                "avg_time": round(avg_time, 2),
-                "avg_score": round(avg_score, 2),
-            }
-        )
-        # Store detailed results for the graphs
-        detailed_results.append(
-            {
-                param_name: value,
-                "scores": scores,
-                "times": times,
-            }
-        )
+        # Calculate averages
+        avg_score = sum(scores) / num_iterations
+        avg_time = sum(times) / num_iterations
 
         logging.info(
             f"Completed {num_iterations} iterations for {param_name}: {value}, "
             f"avg_score: {avg_score:.2f}, avg_time: {avg_time:.2f}"
         )
 
-    # Create summary DataFrame for tables
-    summary_df = pd.DataFrame(param_results)
-    summary_df = summary_df.sort_values(by="avg_score", ascending=False)
+    # Convert to DataFrame
+    results_df = pd.DataFrame(all_iterations)
 
-    # Create detailed DataFrame for graphs
-    detailed_df = pd.DataFrame(detailed_results)
+    # Create visualizations using the detailed data
+    summary_df = (
+        results_df.groupby(param_name)
+        .agg({"score": "mean", "time": "mean"})
+        .round(2)
+        .reset_index()
+    )
+    summary_df.columns = [param_name, "avg_score", "avg_time"]
 
-    logging.info(f"Results for {param_name}:")
-    logging.info(summary_df)
-
-    # Create table with averages
+    # Create visual summaries
     create_table(summary_df, f"{title} - Table")
-    # Create graphs with individual points
-    create_parameter_graphs(detailed_df, param_name, title)
 
-    return summary_df
+    # Modified line to use 'score' instead of 'scores'
+    grouped_scores = results_df.groupby(param_name)[["score"]].agg(list).reset_index()
+    grouped_scores = grouped_scores.rename(columns={"score": "scores"})
+    create_parameter_graphs(
+        grouped_scores,
+        param_name,
+        title,
+    )
+
+    return results_df
 
 
 def run_genetic_experiments():
@@ -310,6 +303,8 @@ def run_hill_climbing_experiments():
 
 # %%
 def main():
+    timestamp = time.strftime("%Y%m%d_%H%M%S")
+
     print("Running Genetic Algorithm Experiments...")
     genetic_results = run_genetic_experiments()
 
@@ -320,11 +315,21 @@ def main():
     results_dir = "experiment_results"
     os.makedirs(results_dir, exist_ok=True)
 
+    # Save each experiment's results with descriptive names
+    experiment_names = {
+        "genetic": ["population_size", "mutation_rate", "memory_depth", "generations"],
+        "hillclimbing": ["memory_depth", "generations"],
+    }
+
     for i, df in enumerate(genetic_results):
-        df.to_csv(f"{results_dir}/genetic_experiment_{i+1}.csv", index=False)
+        filename = (
+            f"{results_dir}/genetic_{experiment_names['genetic'][i]}_{timestamp}.csv"
+        )
+        df.to_csv(filename, index=False)
 
     for i, df in enumerate(hillclimbing_results):
-        df.to_csv(f"{results_dir}/hillclimbing_experiment_{i+1}.csv", index=False)
+        filename = f"{results_dir}/hillclimbing_{experiment_names['hillclimbing'][i]}_{timestamp}.csv"
+        df.to_csv(filename, index=False)
 
 
 # %%
