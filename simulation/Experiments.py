@@ -76,7 +76,7 @@ def create_table(df, title, save_path: str):
 
     plt.show()
 
- def create_parameter_graphs(df, param_name, title):
+def create_parameter_graphs(df, param_name, title, save_path: str):
     # Create a lighter palette using 'husl' with high lightness
     light_palette = sns.color_palette("husl", n_colors=len(df[param_name].unique()))
 
@@ -225,17 +225,17 @@ def run_experiments(
 
 def run_genetic_experiments(img_path: str):
     results = []
-    pop_sizes = [80, 100, 150]
-    mutation_rates = [0.01, 0.05, 0.001]
-    memory_depths = [3, 4, 5]
-    generations = [100, 250, 500]
-    num_iterations = 5  # Number of times to run each iteration
+    pop_sizes = [80, 100, 120, 150, 200]
+    mutation_rates = [0.001, 0.01, 0.05, 0.1]
+    memory_depths = [2, 3, 4, 5]
+    generations = [100, 200, 250, 500]
+    num_iterations = 10  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 80,
-        "mutation_rate": 0.001,
+        "pop_size": 150,
+        "mutation_rate": 0.05,
         "memory_depth": 3,
-        "generations": 250,
+        "generations": 200,
     }
 
     with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
@@ -292,13 +292,13 @@ def run_genetic_experiments(img_path: str):
 
 def run_hill_climbing_experiments(img_path: str):
     results = []
-    memory_depths = [3, 4, 5]
-    generations = [100, 50]
-    num_iterations = 10  # Number of times to run each iteration
+    memory_depths = [2, 3, 4, 5]
+    generations = [50, 100, 250, 500]
+    num_iterations = 20  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 100,
+        "generations": 200,
     }
 
     with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
@@ -331,14 +331,14 @@ def run_hill_climbing_experiments(img_path: str):
 
 def run_tabu_search_experiments(img_path: str):
     results = []
-    memory_depths = [3, 4, 5]
-    generations = [50, 100, 250]
-    tabu_len = [50, 100, 200]
-    num_iterations = 10  # Number of times to run each iteration
+    memory_depths = [2, 3, 4, 5]
+    generations = [50, 100, 250, 500]
+    tabu_len = [20, 50, 100, 200, 250]
+    num_iterations = 20  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 100,
+        "generations": 200,
         "tabu_len": 100,
     }
 
