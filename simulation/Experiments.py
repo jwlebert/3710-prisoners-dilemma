@@ -66,7 +66,7 @@ def create_table(df, title):
 
 
 def create_parameter_graphs(df, param_name, title):
-    bright_palette = sns.set_palette("bright", 8)
+    bright_palette = sns.color_palette("bright", n_colors=len(df[param_name].unique()))
 
     # Create a single figure
     plt.figure(figsize=(10, 6))
