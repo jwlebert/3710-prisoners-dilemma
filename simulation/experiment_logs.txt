@@ -481,3 +481,6 @@ INFO:root:Results for generations:
 INFO:root:   generations  avg_time  avg_score
 0           10      0.82       2.71
 1           20      0.73       2.60
+INFO:root:Iteration time: 219.15 seconds, pop_size: 50, score: 2.78125
+INFO:root:Iteration time: 319.40 seconds, pop_size: 50, score: 2.778125
+INFO:root:Iteration time: 399.07 seconds, pop_size: 50, score: 2.6681250000000003

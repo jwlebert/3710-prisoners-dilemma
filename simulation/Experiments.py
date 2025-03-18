@@ -103,17 +103,17 @@ def run_experiments(
 
 def run_genetic_experiments():
     results = []
-    pop_sizes = [10, 20]
-    mutation_rates = [0.01, 0.001]
-    memory_depths = [3, 4]
-    generations = [10, 20]
+    pop_sizes = [50, 100, 200]
+    mutation_rates = [0.001, 0.01, 0.05]
+    memory_depths = [3, 4, 5]
+    generations = [500, 1000, 2500]
     num_iterations = 5  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 10,
+        "pop_size": 50,
         "mutation_rate": 0.01,
         "memory_depth": 3,
-        "generations": 10,
+        "generations": 500,
     }
 
     results.append(
@@ -163,13 +163,13 @@ def run_genetic_experiments():
 
 def run_hill_climbing_experiments():
     results = []
-    memory_depths = [3, 4]
-    generations = [10, 20]
-    num_iterations = 5  # Number of times to run each iteration
+    memory_depths = [3, 4, 5]
+    generations = [100, 200, 500, 1000]
+    num_iterations = 10  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 10,
+        "generations": 500,
     }
 
     results.append(
