@@ -6,6 +6,8 @@ import pandas as pd
 import time
 import logging
 
+logging.basicConfig(filename="experiment_logs.txt", level=logging.INFO, force=True)
+
 
 def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
     rounds = 100
@@ -34,7 +36,7 @@ def HillClimbingExperiments(memory_depth, generations):
 # %%
 
 
-def create_table(df):
+def create_table(df, title):
     fig, ax = plt.subplots()
     ax.axis("tight")
     ax.axis("off")
@@ -48,15 +50,17 @@ def create_table(df):
     table.set_fontsize(10)
     table.scale(1.2, 1.2)
     table.auto_set_column_width(col=list(range(len(df.columns))))
+
+    plt.figtext(0.5, 0.95, title, ha="center", fontsize=14)
+
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.85)  # Adjust the top to make space for the title
+
     plt.show()
 
 
 def run_experiments(
-    experiment_func,
-    param_name,
-    param_values,
-    fixed_params,
-    num_iterations,
+    experiment_func, param_name, param_values, fixed_params, num_iterations, title
 ):
     param_results = []
     for value in param_values:
@@ -74,23 +78,25 @@ def run_experiments(
             iteration_end_time = time.time()
             iteration_time = iteration_end_time - iteration_start_time
             iteration_times.append(iteration_time)
-            logging.info(f"Iteration time: {iteration_time:.2f} seconds")
+            logging.info(
+                f"Iteration time: {iteration_time:.2f} seconds, {param_name}: {value}, score: {score}"
+            )
 
         avg_score = sum(iteration_scores) / num_iterations
         avg_time = sum(iteration_times) / num_iterations
         o = {
             param_name: value,
-            "score": round(avg_score, 2),
             "avg_time": round(avg_time, 2),
+            "avg_score": round(avg_score, 2),
         }
         param_results.append(o)
 
     df = pd.DataFrame(param_results)
-    df = df.sort_values(by="score", ascending=False)
+    df = df.sort_values(by="avg_score", ascending=False)
     logging.info(f"Results for {param_name}:")
     logging.info(df)
 
-    create_table(df)
+    create_table(df, title)
 
     return df
 
@@ -110,21 +116,46 @@ def run_genetic_experiments():
         "generations": 10,
     }
 
-    run_experiments(
-        GeneticExperiments, "pop_size", pop_sizes, fixed_params, num_iterations
+    results.append(
+        run_experiments(
+            GeneticExperiments,
+            "pop_size",
+            pop_sizes,
+            fixed_params,
+            num_iterations,
+            "Genetic Algorithm - Population Size",
+        )
     )
-    run_experiments(
-        GeneticExperiments,
-        "mutation_rate",
-        mutation_rates,
-        fixed_params,
-        num_iterations,
+    results.append(
+        run_experiments(
+            GeneticExperiments,
+            "mutation_rate",
+            mutation_rates,
+            fixed_params,
+            num_iterations,
+            "Genetic Algorithm - Mutation Rate",
+        )
     )
-    run_experiments(
-        GeneticExperiments, "memory_depth", memory_depths, fixed_params, num_iterations
+
+    results.append(
+        run_experiments(
+            GeneticExperiments,
+            "memory_depth",
+            memory_depths,
+            fixed_params,
+            num_iterations,
+            "Genetic Algorithm - Memory Depth",
+        )
     )
-    run_experiments(
-        GeneticExperiments, "generations", generations, fixed_params, num_iterations
+    results.append(
+        run_experiments(
+            GeneticExperiments,
+            "generations",
+            generations,
+            fixed_params,
+            num_iterations,
+            "Genetic Algorithm - Generations",
+        )
     )
 
     return results
@@ -141,19 +172,25 @@ def run_hill_climbing_experiments():
         "generations": 10,
     }
 
-    run_experiments(
-        HillClimbingExperiments,
-        "memory_depth",
-        memory_depths,
-        fixed_params,
-        num_iterations,
+    results.append(
+        run_experiments(
+            HillClimbingExperiments,
+            "memory_depth",
+            memory_depths,
+            fixed_params,
+            num_iterations,
+            "Hill Climbing - Memory Depth",
+        )
     )
-    run_experiments(
-        HillClimbingExperiments,
-        "generations",
-        generations,
-        fixed_params,
-        num_iterations,
+    results.append(
+        run_experiments(
+            HillClimbingExperiments,
+            "generations",
+            generations,
+            fixed_params,
+            num_iterations,
+            "Hill Climbing - Generations",
+        )
     )
 
     return results
