@@ -9,13 +9,13 @@ class GeneticIndividual: # individual agent
         self.memory_depth: int = memory_depth
         self.rounds: int = rounds
         self.__fitness: int = None
-    
+
     @property
     def fitness(self):
         if self.__fitness is None:
             tournament = OptimizedTournament(self.chromosome, self.memory_depth, rounds=self.rounds)
             self.__fitness = tournament.get_score()
-        
+
         return self.__fitness
 
 class GeneticAlgorithm(OptimizationAlgorithm): # population
@@ -23,7 +23,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         super().__init__(memory_depth=memory_depth)
         
         self.population: List[GeneticIndividual] = []
-        self.pop_size: int = pop_size # best when even
+        self.pop_size: int = pop_size  # best when even
         self.mutation_rate: float = mutation_rate
     
     def initial_sample(self):
@@ -50,30 +50,34 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
 
             next_generation.append(c1)
             next_generation.append(c2)
-        
+
         self.population = next_generation
         self.iteration += 1
 
         return None
     
     def best_strategy(self):
-        best_individual: GeneticIndividual = sorted(self.population, key=lambda l: l.fitness, reverse=True)[0]
+        best_individual: GeneticIndividual = sorted(
+            self.population, key=lambda l: l.fitness, reverse=True
+        )[0]
         return best_individual.chromosome
 
-    def select_parents(self) -> Tuple[GeneticIndividual, GeneticIndividual]: # roulette wheel selection
+    def select_parents(
+        self,
+    ) -> Tuple[GeneticIndividual, GeneticIndividual]:  # roulette wheel selection
         total_fitness = 0
         for individual in self.population:
             total_fitness += individual.fitness
 
         # here we combine probability calculation and selection for efficiency
-        prob1, p1 = random.random(), None # parent 1 prob
-        prob2, p2 = random.random(), None # parent 2 prob
+        prob1, p1 = random.random(), None  # parent 1 prob
+        prob2, p2 = random.random(), None  # parent 2 prob
 
         cumulative: float = 0.0
         for individual in self.population:
             prob: float = individual.fitness / total_fitness
             cumulative += prob
-            
+
             if p1 is None and cumulative >= prob1:
                 p1 = individual
             if p2 is None and cumulative >= prob2:
@@ -81,11 +85,13 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
 
             if p1 is not None and p2 is not None:
                 break
-        
+
         return (p1, p2)
 
     # random point crossover
-    def crossover(self, parents: Tuple[GeneticIndividual, GeneticIndividual]) -> Tuple[GeneticIndividual, GeneticIndividual]:
+    def crossover(
+        self, parents: Tuple[GeneticIndividual, GeneticIndividual]
+    ) -> Tuple[GeneticIndividual, GeneticIndividual]:
         p1, p2 = parents
 
         crossover_index = random.randint(1, self.bit_arr_len - 1)
@@ -98,7 +104,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         c2 = GeneticIndividual(chromo2, self.memory_depth, self.rounds)
 
         return (c1, c2)
-    
+
     def mutate(self, individual: GeneticIndividual) -> int:
         mutated_chromosome = individual.chromosome
         for i in range(self.bit_arr_len):

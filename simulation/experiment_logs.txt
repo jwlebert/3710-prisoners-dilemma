@@ -1,0 +1,486 @@
+INFO:root:Iteration time: 0.36 seconds, pop_size: 10, score: 2.6900000000000004
+INFO:root:Iteration time: 0.40 seconds, pop_size: 10, score: 2.47625
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.58375
+INFO:root:Iteration time: 0.37 seconds, pop_size: 10, score: 2.6125
+INFO:root:Iteration time: 0.41 seconds, pop_size: 10, score: 2.53
+INFO:root:Iteration time: 0.85 seconds, pop_size: 20, score: 2.6375
+INFO:root:Iteration time: 0.87 seconds, pop_size: 20, score: 2.675
+INFO:root:Iteration time: 0.80 seconds, pop_size: 20, score: 2.5749999999999997
+INFO:root:Iteration time: 0.84 seconds, pop_size: 20, score: 2.6312499999999996
+INFO:root:Iteration time: 0.77 seconds, pop_size: 20, score: 2.56625
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+1        20      0.82       2.62
+0        10      0.39       2.58
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.01, score: 2.69375
+INFO:root:Iteration time: 0.39 seconds, mutation_rate: 0.01, score: 2.55
+INFO:root:Iteration time: 0.43 seconds, mutation_rate: 0.01, score: 2.6174999999999997
+INFO:root:Iteration time: 0.38 seconds, mutation_rate: 0.01, score: 2.5175
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.01, score: 2.63375
+INFO:root:Iteration time: 0.49 seconds, mutation_rate: 0.001, score: 2.7275000000000005
+INFO:root:Iteration time: 0.37 seconds, mutation_rate: 0.001, score: 2.5525
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.001, score: 2.5925
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.001, score: 2.6
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.001, score: 2.4974999999999996
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.40       2.60
+1          0.001      0.41       2.59
+INFO:root:Iteration time: 0.48 seconds, memory_depth: 3, score: 2.71875
+INFO:root:Iteration time: 0.44 seconds, memory_depth: 3, score: 2.54
+INFO:root:Iteration time: 0.43 seconds, memory_depth: 3, score: 2.6887499999999998
+INFO:root:Iteration time: 0.44 seconds, memory_depth: 3, score: 2.5125
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 3, score: 2.55375
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 4, score: 2.6637500000000003
+INFO:root:Iteration time: 0.45 seconds, memory_depth: 4, score: 2.5862499999999997
+INFO:root:Iteration time: 0.43 seconds, memory_depth: 4, score: 2.6887499999999998
+INFO:root:Iteration time: 0.45 seconds, memory_depth: 4, score: 2.585
+INFO:root:Iteration time: 0.44 seconds, memory_depth: 4, score: 2.63
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+1             4      0.44       2.63
+0             3      0.43       2.60
+INFO:root:Iteration time: 0.39 seconds, generations: 10, score: 2.555
+INFO:root:Iteration time: 0.41 seconds, generations: 10, score: 2.60375
+INFO:root:Iteration time: 0.43 seconds, generations: 10, score: 2.815
+INFO:root:Iteration time: 0.49 seconds, generations: 10, score: 2.65875
+INFO:root:Iteration time: 0.42 seconds, generations: 10, score: 2.6037500000000002
+INFO:root:Iteration time: 0.74 seconds, generations: 20, score: 2.62125
+INFO:root:Iteration time: 0.78 seconds, generations: 20, score: 2.5825
+INFO:root:Iteration time: 0.82 seconds, generations: 20, score: 2.8512500000000003
+INFO:root:Iteration time: 0.88 seconds, generations: 20, score: 2.5575
+INFO:root:Iteration time: 0.77 seconds, generations: 20, score: 2.6237500000000002
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.43       2.65
+1           20      0.80       2.65
+INFO:root:Iteration time: 0.63 seconds, memory_depth: 3, score: 2.605
+INFO:root:Iteration time: 0.88 seconds, memory_depth: 3, score: 2.7325
+INFO:root:Iteration time: 0.21 seconds, memory_depth: 3, score: 2.5875
+INFO:root:Iteration time: 0.20 seconds, memory_depth: 3, score: 2.515
+INFO:root:Iteration time: 0.43 seconds, memory_depth: 3, score: 2.7262500000000003
+INFO:root:Iteration time: 1.83 seconds, memory_depth: 4, score: 2.665
+INFO:root:Iteration time: 2.63 seconds, memory_depth: 4, score: 2.73875
+INFO:root:Iteration time: 3.54 seconds, memory_depth: 4, score: 2.6475
+INFO:root:Iteration time: 0.95 seconds, memory_depth: 4, score: 2.505
+INFO:root:Iteration time: 3.28 seconds, memory_depth: 4, score: 2.625
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+1             4      2.44       2.64
+0             3      0.47       2.63
+INFO:root:Iteration time: 1.35 seconds, generations: 10, score: 2.7687500000000003
+INFO:root:Iteration time: 0.86 seconds, generations: 10, score: 2.8225000000000002
+INFO:root:Iteration time: 0.26 seconds, generations: 10, score: 2.54875
+INFO:root:Iteration time: 0.48 seconds, generations: 10, score: 2.5775
+INFO:root:Iteration time: 0.83 seconds, generations: 10, score: 2.69875
+INFO:root:Iteration time: 0.23 seconds, generations: 20, score: 2.59375
+INFO:root:Iteration time: 1.30 seconds, generations: 20, score: 2.8225
+INFO:root:Iteration time: 1.00 seconds, generations: 20, score: 2.7125000000000004
+INFO:root:Iteration time: 1.31 seconds, generations: 20, score: 2.79875
+INFO:root:Iteration time: 0.73 seconds, generations: 20, score: 2.7887500000000003
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+1           20      0.92       2.74
+0           10      0.76       2.68
+INFO:root:Iteration time: 0.41 seconds, pop_size: 10, score: 2.55375
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.69
+INFO:root:Iteration time: 0.40 seconds, pop_size: 10, score: 2.5175
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.745
+INFO:root:Iteration time: 0.39 seconds, pop_size: 10, score: 2.6950000000000003
+INFO:root:Iteration time: 0.78 seconds, pop_size: 20, score: 2.6312499999999996
+INFO:root:Iteration time: 0.76 seconds, pop_size: 20, score: 2.5862499999999997
+INFO:root:Iteration time: 0.79 seconds, pop_size: 20, score: 2.65875
+INFO:root:Iteration time: 0.89 seconds, pop_size: 20, score: 2.6037500000000002
+INFO:root:Iteration time: 0.87 seconds, pop_size: 20, score: 2.7575000000000003
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+1        20      0.82       2.65
+0        10      0.41       2.64
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.01, score: 2.61625
+INFO:root:Iteration time: 0.38 seconds, mutation_rate: 0.01, score: 2.7075
+INFO:root:Iteration time: 0.37 seconds, mutation_rate: 0.01, score: 2.80375
+INFO:root:Iteration time: 0.37 seconds, mutation_rate: 0.01, score: 2.6937499999999996
+INFO:root:Iteration time: 0.55 seconds, mutation_rate: 0.01, score: 2.505
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.001, score: 2.6375
+INFO:root:Iteration time: 0.45 seconds, mutation_rate: 0.001, score: 2.75875
+INFO:root:Iteration time: 0.43 seconds, mutation_rate: 0.001, score: 2.59625
+INFO:root:Iteration time: 0.60 seconds, mutation_rate: 0.001, score: 2.53125
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.001, score: 2.7312499999999997
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.42       2.67
+1          0.001      0.46       2.65
+INFO:root:Iteration time: 0.43 seconds, memory_depth: 3, score: 2.6525
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 3, score: 2.59375
+INFO:root:Iteration time: 0.54 seconds, memory_depth: 3, score: 2.52
+INFO:root:Iteration time: 0.47 seconds, memory_depth: 3, score: 2.66
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 3, score: 2.47125
+INFO:root:Iteration time: 0.40 seconds, memory_depth: 4, score: 2.46875
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 4, score: 2.60375
+INFO:root:Iteration time: 0.37 seconds, memory_depth: 4, score: 2.5075000000000003
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 4, score: 2.7587499999999996
+INFO:root:Iteration time: 0.39 seconds, memory_depth: 4, score: 2.6750000000000003
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+1             4      0.39       2.60
+0             3      0.45       2.58
+INFO:root:Iteration time: 0.39 seconds, generations: 10, score: 2.6212500000000003
+INFO:root:Iteration time: 0.35 seconds, generations: 10, score: 2.5775
+INFO:root:Iteration time: 0.41 seconds, generations: 10, score: 2.5075000000000003
+INFO:root:Iteration time: 0.42 seconds, generations: 10, score: 2.49625
+INFO:root:Iteration time: 0.40 seconds, generations: 10, score: 2.49
+INFO:root:Iteration time: 0.72 seconds, generations: 20, score: 2.6037500000000002
+INFO:root:Iteration time: 0.67 seconds, generations: 20, score: 2.63
+INFO:root:Iteration time: 0.75 seconds, generations: 20, score: 2.59375
+INFO:root:Iteration time: 0.68 seconds, generations: 20, score: 2.6025
+INFO:root:Iteration time: 0.71 seconds, generations: 20, score: 2.6999999999999997
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+1           20      0.71       2.63
+0           10      0.39       2.54
+INFO:root:Iteration time: 0.99 seconds, memory_depth: 3, score: 2.64625
+INFO:root:Iteration time: 0.79 seconds, memory_depth: 3, score: 2.51375
+INFO:root:Iteration time: 0.84 seconds, memory_depth: 3, score: 2.72
+INFO:root:Iteration time: 0.20 seconds, memory_depth: 3, score: 2.59875
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 3, score: 2.7
+INFO:root:Iteration time: 2.67 seconds, memory_depth: 4, score: 2.6149999999999998
+INFO:root:Iteration time: 4.93 seconds, memory_depth: 4, score: 2.7225
+INFO:root:Iteration time: 4.24 seconds, memory_depth: 4, score: 2.6425
+INFO:root:Iteration time: 1.77 seconds, memory_depth: 4, score: 2.5475
+INFO:root:Iteration time: 3.64 seconds, memory_depth: 4, score: 2.6662500000000002
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.65       2.64
+1             4      3.45       2.64
+INFO:root:Iteration time: 1.00 seconds, generations: 10, score: 2.62
+INFO:root:Iteration time: 0.90 seconds, generations: 10, score: 2.80875
+INFO:root:Iteration time: 0.43 seconds, generations: 10, score: 2.7525
+INFO:root:Iteration time: 0.20 seconds, generations: 10, score: 2.5425
+INFO:root:Iteration time: 0.75 seconds, generations: 10, score: 2.61375
+INFO:root:Iteration time: 0.44 seconds, generations: 20, score: 2.58
+INFO:root:Iteration time: 0.66 seconds, generations: 20, score: 2.71375
+INFO:root:Iteration time: 0.97 seconds, generations: 20, score: 2.68125
+INFO:root:Iteration time: 0.63 seconds, generations: 20, score: 2.62375
+INFO:root:Iteration time: 1.65 seconds, generations: 20, score: 2.6862500000000002
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.66       2.67
+1           20      0.87       2.66
+INFO:root:Iteration time: 0.50 seconds, pop_size: 10, score: 2.5475
+INFO:root:Iteration time: 0.46 seconds, pop_size: 10, score: 2.54875
+INFO:root:Iteration time: 0.51 seconds, pop_size: 10, score: 2.48875
+INFO:root:Iteration time: 0.38 seconds, pop_size: 10, score: 2.6775
+INFO:root:Iteration time: 0.43 seconds, pop_size: 10, score: 2.4437499999999996
+INFO:root:Iteration time: 0.92 seconds, pop_size: 20, score: 2.6437500000000003
+INFO:root:Iteration time: 0.78 seconds, pop_size: 20, score: 2.61875
+INFO:root:Iteration time: 0.92 seconds, pop_size: 20, score: 2.74375
+INFO:root:Iteration time: 0.79 seconds, pop_size: 20, score: 2.58125
+INFO:root:Iteration time: 0.77 seconds, pop_size: 20, score: 2.66
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+1        20      0.84       2.65
+0        10      0.45       2.54
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.01, score: 2.6387500000000004
+INFO:root:Iteration time: 0.36 seconds, mutation_rate: 0.01, score: 2.6225
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.01, score: 2.67375
+INFO:root:Iteration time: 0.44 seconds, mutation_rate: 0.01, score: 2.58375
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.01, score: 2.64375
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.001, score: 2.63375
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.001, score: 2.5325
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.001, score: 2.48625
+INFO:root:Iteration time: 0.45 seconds, mutation_rate: 0.001, score: 2.63875
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.001, score: 2.52625
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.41       2.63
+1          0.001      0.42       2.56
+INFO:root:Iteration time: 0.44 seconds, memory_depth: 3, score: 2.5612500000000002
+INFO:root:Iteration time: 0.46 seconds, memory_depth: 3, score: 2.70875
+INFO:root:Iteration time: 0.52 seconds, memory_depth: 3, score: 2.6337499999999996
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 3, score: 2.63
+INFO:root:Iteration time: 0.49 seconds, memory_depth: 3, score: 2.68125
+INFO:root:Iteration time: 0.36 seconds, memory_depth: 4, score: 2.5775
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 4, score: 2.535
+INFO:root:Iteration time: 0.36 seconds, memory_depth: 4, score: 2.6725
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 4, score: 2.575
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 4, score: 2.60375
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.47       2.64
+1             4      0.38       2.59
+INFO:root:Iteration time: 0.40 seconds, generations: 10, score: 2.66875
+INFO:root:Iteration time: 0.38 seconds, generations: 10, score: 2.48625
+INFO:root:Iteration time: 0.41 seconds, generations: 10, score: 2.6974999999999993
+INFO:root:Iteration time: 0.38 seconds, generations: 10, score: 2.6537500000000005
+INFO:root:Iteration time: 0.41 seconds, generations: 10, score: 2.6025
+INFO:root:Iteration time: 0.70 seconds, generations: 20, score: 2.685
+INFO:root:Iteration time: 0.73 seconds, generations: 20, score: 2.6275000000000004
+INFO:root:Iteration time: 0.69 seconds, generations: 20, score: 2.5325
+INFO:root:Iteration time: 0.69 seconds, generations: 20, score: 2.60125
+INFO:root:Iteration time: 0.99 seconds, generations: 20, score: 2.7175000000000002
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+1           20      0.76       2.63
+0           10      0.40       2.62
+INFO:root:Iteration time: 1.19 seconds, memory_depth: 3, score: 2.555
+INFO:root:Iteration time: 1.17 seconds, memory_depth: 3, score: 2.69375
+INFO:root:Iteration time: 0.57 seconds, memory_depth: 3, score: 2.47125
+INFO:root:Iteration time: 0.49 seconds, memory_depth: 3, score: 2.6824999999999997
+INFO:root:Iteration time: 1.12 seconds, memory_depth: 3, score: 2.65625
+INFO:root:Iteration time: 4.50 seconds, memory_depth: 4, score: 2.7124999999999995
+INFO:root:Iteration time: 2.66 seconds, memory_depth: 4, score: 2.785
+INFO:root:Iteration time: 2.90 seconds, memory_depth: 4, score: 2.7175000000000002
+INFO:root:Iteration time: 3.45 seconds, memory_depth: 4, score: 2.7575
+INFO:root:Iteration time: 3.46 seconds, memory_depth: 4, score: 2.67125
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+1             4      3.39       2.73
+0             3      0.91       2.61
+INFO:root:Iteration time: 0.61 seconds, generations: 10, score: 2.59375
+INFO:root:Iteration time: 0.61 seconds, generations: 10, score: 2.6237500000000002
+INFO:root:Iteration time: 0.70 seconds, generations: 10, score: 2.7387499999999996
+INFO:root:Iteration time: 0.42 seconds, generations: 10, score: 2.67375
+INFO:root:Iteration time: 1.07 seconds, generations: 10, score: 2.6787500000000004
+INFO:root:Iteration time: 0.98 seconds, generations: 20, score: 2.6375
+INFO:root:Iteration time: 0.40 seconds, generations: 20, score: 2.62875
+INFO:root:Iteration time: 0.87 seconds, generations: 20, score: 2.79875
+INFO:root:Iteration time: 0.91 seconds, generations: 20, score: 2.5375
+INFO:root:Iteration time: 0.47 seconds, generations: 20, score: 2.59375
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.68       2.66
+1           20      0.73       2.64
+INFO:root:Iteration time: 0.61 seconds, pop_size: 10, score: 2.1824999999999997
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.6050000000000004
+INFO:root:Iteration time: 0.47 seconds, pop_size: 10, score: 2.50625
+INFO:root:Iteration time: 0.48 seconds, pop_size: 10, score: 2.52375
+INFO:root:Iteration time: 0.40 seconds, pop_size: 10, score: 2.515
+INFO:root:Iteration time: 0.77 seconds, pop_size: 20, score: 2.685
+INFO:root:Iteration time: 0.88 seconds, pop_size: 20, score: 2.6937500000000005
+INFO:root:Iteration time: 0.89 seconds, pop_size: 20, score: 2.68875
+INFO:root:Iteration time: 0.76 seconds, pop_size: 20, score: 2.55375
+INFO:root:Iteration time: 0.78 seconds, pop_size: 20, score: 2.61375
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+1        20      0.82       2.65
+0        10      0.48       2.47
+INFO:root:Iteration time: 0.46 seconds, mutation_rate: 0.01, score: 2.565
+INFO:root:Iteration time: 0.46 seconds, mutation_rate: 0.01, score: 2.67375
+INFO:root:Iteration time: 0.39 seconds, mutation_rate: 0.01, score: 2.65375
+INFO:root:Iteration time: 0.43 seconds, mutation_rate: 0.01, score: 2.57875
+INFO:root:Iteration time: 0.37 seconds, mutation_rate: 0.01, score: 2.67375
+INFO:root:Iteration time: 0.57 seconds, mutation_rate: 0.001, score: 2.5875000000000004
+INFO:root:Iteration time: 0.46 seconds, mutation_rate: 0.001, score: 2.59125
+INFO:root:Iteration time: 0.53 seconds, mutation_rate: 0.001, score: 2.465
+INFO:root:Iteration time: 0.50 seconds, mutation_rate: 0.001, score: 2.4437500000000005
+INFO:root:Iteration time: 0.47 seconds, mutation_rate: 0.001, score: 2.59625
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.42       2.63
+1          0.001      0.51       2.54
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 3, score: 2.51
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 3, score: 2.6225
+INFO:root:Iteration time: 0.52 seconds, memory_depth: 3, score: 2.59875
+INFO:root:Iteration time: 0.53 seconds, memory_depth: 3, score: 2.7887500000000003
+INFO:root:Iteration time: 0.44 seconds, memory_depth: 3, score: 2.5612500000000002
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 4, score: 2.55875
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 4, score: 2.59
+INFO:root:Iteration time: 0.52 seconds, memory_depth: 4, score: 2.53375
+INFO:root:Iteration time: 0.58 seconds, memory_depth: 4, score: 2.585
+INFO:root:Iteration time: 0.48 seconds, memory_depth: 4, score: 2.75625
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.46       2.62
+1             4      0.47       2.60
+INFO:root:Iteration time: 0.47 seconds, generations: 10, score: 2.6625
+INFO:root:Iteration time: 0.42 seconds, generations: 10, score: 2.59
+INFO:root:Iteration time: 0.45 seconds, generations: 10, score: 2.73375
+INFO:root:Iteration time: 0.55 seconds, generations: 10, score: 2.5675
+INFO:root:Iteration time: 0.49 seconds, generations: 10, score: 2.71
+INFO:root:Iteration time: 0.83 seconds, generations: 20, score: 2.58375
+INFO:root:Iteration time: 0.74 seconds, generations: 20, score: 2.4987500000000002
+INFO:root:Iteration time: 0.83 seconds, generations: 20, score: 2.63125
+INFO:root:Iteration time: 0.83 seconds, generations: 20, score: 2.51625
+INFO:root:Iteration time: 0.80 seconds, generations: 20, score: 2.50875
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.48       2.65
+1           20      0.81       2.55
+INFO:root:Iteration time: 0.93 seconds, memory_depth: 3, score: 2.8475
+INFO:root:Iteration time: 1.00 seconds, memory_depth: 3, score: 2.7825
+INFO:root:Iteration time: 0.61 seconds, memory_depth: 3, score: 2.51875
+INFO:root:Iteration time: 0.63 seconds, memory_depth: 3, score: 2.71375
+INFO:root:Iteration time: 1.56 seconds, memory_depth: 3, score: 2.74875
+INFO:root:Iteration time: 2.47 seconds, memory_depth: 4, score: 2.5575
+INFO:root:Iteration time: 1.65 seconds, memory_depth: 4, score: 2.6187500000000004
+INFO:root:Iteration time: 0.81 seconds, memory_depth: 4, score: 2.5975
+INFO:root:Iteration time: 2.63 seconds, memory_depth: 4, score: 2.6825
+INFO:root:Iteration time: 0.81 seconds, memory_depth: 4, score: 2.50625
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.94       2.72
+1             4      1.67       2.59
+INFO:root:Iteration time: 1.06 seconds, generations: 10, score: 2.6437500000000003
+INFO:root:Iteration time: 1.08 seconds, generations: 10, score: 2.6525
+INFO:root:Iteration time: 0.93 seconds, generations: 10, score: 2.6275
+INFO:root:Iteration time: 0.51 seconds, generations: 10, score: 2.715
+INFO:root:Iteration time: 0.47 seconds, generations: 10, score: 2.5037499999999997
+INFO:root:Iteration time: 0.33 seconds, generations: 20, score: 2.62
+INFO:root:Iteration time: 0.64 seconds, generations: 20, score: 2.5562500000000004
+INFO:root:Iteration time: 0.42 seconds, generations: 20, score: 2.8225000000000002
+INFO:root:Iteration time: 0.65 seconds, generations: 20, score: 2.67875
+INFO:root:Iteration time: 0.42 seconds, generations: 20, score: 2.7274999999999996
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+1           20      0.49       2.68
+0           10      0.81       2.63
+INFO:root:Iteration time: 0.43 seconds, pop_size: 10, score: 2.56
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.5574999999999997
+INFO:root:Iteration time: 0.40 seconds, pop_size: 10, score: 2.6487499999999997
+INFO:root:Iteration time: 0.37 seconds, pop_size: 10, score: 2.56875
+INFO:root:Iteration time: 0.41 seconds, pop_size: 10, score: 2.5175
+INFO:root:Iteration time: 0.85 seconds, pop_size: 20, score: 2.5875
+INFO:root:Iteration time: 0.85 seconds, pop_size: 20, score: 2.70625
+INFO:root:Iteration time: 0.82 seconds, pop_size: 20, score: 2.7300000000000004
+INFO:root:Iteration time: 0.79 seconds, pop_size: 20, score: 2.5525
+INFO:root:Iteration time: 0.83 seconds, pop_size: 20, score: 2.47125
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+1        20      0.83       2.61
+0        10      0.41       2.57
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.01, score: 2.6475
+INFO:root:Iteration time: 0.39 seconds, mutation_rate: 0.01, score: 2.70625
+INFO:root:Iteration time: 0.38 seconds, mutation_rate: 0.01, score: 2.5275
+INFO:root:Iteration time: 0.51 seconds, mutation_rate: 0.01, score: 2.6025
+INFO:root:Iteration time: 0.38 seconds, mutation_rate: 0.01, score: 2.55625
+INFO:root:Iteration time: 0.38 seconds, mutation_rate: 0.001, score: 2.4637499999999997
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.001, score: 2.5562500000000004
+INFO:root:Iteration time: 0.44 seconds, mutation_rate: 0.001, score: 2.4699999999999998
+INFO:root:Iteration time: 0.44 seconds, mutation_rate: 0.001, score: 2.50875
+INFO:root:Iteration time: 0.44 seconds, mutation_rate: 0.001, score: 2.53625
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.42       2.61
+1          0.001      0.42       2.51
+INFO:root:Iteration time: 0.45 seconds, memory_depth: 3, score: 2.43
+INFO:root:Iteration time: 0.40 seconds, memory_depth: 3, score: 2.54875
+INFO:root:Iteration time: 0.43 seconds, memory_depth: 3, score: 2.5324999999999998
+INFO:root:Iteration time: 0.50 seconds, memory_depth: 3, score: 2.68
+INFO:root:Iteration time: 0.45 seconds, memory_depth: 3, score: 2.5687499999999996
+INFO:root:Iteration time: 0.36 seconds, memory_depth: 4, score: 2.6862500000000002
+INFO:root:Iteration time: 0.40 seconds, memory_depth: 4, score: 2.585
+INFO:root:Iteration time: 0.50 seconds, memory_depth: 4, score: 2.555
+INFO:root:Iteration time: 0.47 seconds, memory_depth: 4, score: 2.63375
+INFO:root:Iteration time: 0.45 seconds, memory_depth: 4, score: 2.435
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+1             4      0.44       2.58
+0             3      0.45       2.55
+INFO:root:Iteration time: 0.44 seconds, generations: 10, score: 2.59
+INFO:root:Iteration time: 0.52 seconds, generations: 10, score: 2.67375
+INFO:root:Iteration time: 0.50 seconds, generations: 10, score: 2.62
+INFO:root:Iteration time: 0.52 seconds, generations: 10, score: 2.5075
+INFO:root:Iteration time: 0.48 seconds, generations: 10, score: 2.56
+INFO:root:Iteration time: 0.90 seconds, generations: 20, score: 2.545
+INFO:root:Iteration time: 0.71 seconds, generations: 20, score: 2.5162500000000003
+INFO:root:Iteration time: 0.85 seconds, generations: 20, score: 2.5625000000000004
+INFO:root:Iteration time: 0.78 seconds, generations: 20, score: 2.6174999999999997
+INFO:root:Iteration time: 0.91 seconds, generations: 20, score: 2.645
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.49       2.59
+1           20      0.83       2.58
+INFO:root:Iteration time: 0.23 seconds, memory_depth: 3, score: 2.59125
+INFO:root:Iteration time: 0.53 seconds, memory_depth: 3, score: 2.56
+INFO:root:Iteration time: 0.68 seconds, memory_depth: 3, score: 2.5425
+INFO:root:Iteration time: 1.40 seconds, memory_depth: 3, score: 2.7425
+INFO:root:Iteration time: 2.08 seconds, memory_depth: 3, score: 2.74625
+INFO:root:Iteration time: 3.17 seconds, memory_depth: 4, score: 2.4825
+INFO:root:Iteration time: 2.06 seconds, memory_depth: 4, score: 2.56625
+INFO:root:Iteration time: 0.51 seconds, pop_size: 10, score: 2.5975
+INFO:root:Iteration time: 0.40 seconds, pop_size: 10, score: 2.58625
+INFO:root:Iteration time: 0.45 seconds, pop_size: 10, score: 2.6824999999999997
+INFO:root:Iteration time: 0.39 seconds, pop_size: 10, score: 2.6012500000000003
+INFO:root:Iteration time: 0.42 seconds, pop_size: 10, score: 2.665
+INFO:root:Iteration time: 0.85 seconds, pop_size: 20, score: 2.63
+INFO:root:Iteration time: 0.79 seconds, pop_size: 20, score: 2.59375
+INFO:root:Iteration time: 0.85 seconds, pop_size: 20, score: 2.645
+INFO:root:Iteration time: 0.80 seconds, pop_size: 20, score: 2.55375
+INFO:root:Iteration time: 0.84 seconds, pop_size: 20, score: 2.62625
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+0        10      0.43       2.63
+1        20      0.82       2.61
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.01, score: 2.55375
+INFO:root:Iteration time: 0.43 seconds, mutation_rate: 0.01, score: 2.49
+INFO:root:Iteration time: 0.47 seconds, mutation_rate: 0.01, score: 2.7162499999999996
+INFO:root:Iteration time: 0.54 seconds, mutation_rate: 0.01, score: 2.6449999999999996
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.01, score: 2.75875
+INFO:root:Iteration time: 0.37 seconds, mutation_rate: 0.001, score: 2.61375
+INFO:root:Iteration time: 0.42 seconds, mutation_rate: 0.001, score: 2.6187500000000004
+INFO:root:Iteration time: 0.39 seconds, mutation_rate: 0.001, score: 2.48125
+INFO:root:Iteration time: 0.41 seconds, mutation_rate: 0.001, score: 2.5637499999999998
+INFO:root:Iteration time: 0.40 seconds, mutation_rate: 0.001, score: 2.48625
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+0          0.010      0.45       2.63
+1          0.001      0.40       2.55
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 3, score: 2.64875
+INFO:root:Iteration time: 0.39 seconds, memory_depth: 3, score: 2.65375
+INFO:root:Iteration time: 0.60 seconds, memory_depth: 3, score: 2.61125
+INFO:root:Iteration time: 0.39 seconds, memory_depth: 3, score: 2.59
+INFO:root:Iteration time: 0.38 seconds, memory_depth: 3, score: 2.61875
+INFO:root:Iteration time: 0.39 seconds, memory_depth: 4, score: 2.4837499999999997
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 4, score: 2.59375
+INFO:root:Iteration time: 0.41 seconds, memory_depth: 4, score: 2.49875
+INFO:root:Iteration time: 0.42 seconds, memory_depth: 4, score: 2.6187499999999995
+INFO:root:Iteration time: 0.39 seconds, memory_depth: 4, score: 2.51125
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.44       2.62
+1             4      0.40       2.54
+INFO:root:Iteration time: 0.40 seconds, generations: 10, score: 2.56625
+INFO:root:Iteration time: 0.35 seconds, generations: 10, score: 2.75875
+INFO:root:Iteration time: 0.39 seconds, generations: 10, score: 2.57125
+INFO:root:Iteration time: 0.39 seconds, generations: 10, score: 2.65625
+INFO:root:Iteration time: 0.40 seconds, generations: 10, score: 2.5
+INFO:root:Iteration time: 0.73 seconds, generations: 20, score: 2.6825
+INFO:root:Iteration time: 0.79 seconds, generations: 20, score: 2.7937499999999997
+INFO:root:Iteration time: 0.72 seconds, generations: 20, score: 2.7325000000000004
+INFO:root:Iteration time: 0.70 seconds, generations: 20, score: 2.5675
+INFO:root:Iteration time: 0.74 seconds, generations: 20, score: 2.7062500000000003
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+1           20      0.74       2.70
+0           10      0.39       2.61
+INFO:root:Iteration time: 1.86 seconds, memory_depth: 3, score: 2.84875
+INFO:root:Iteration time: 1.10 seconds, memory_depth: 3, score: 2.7125
+INFO:root:Iteration time: 0.78 seconds, memory_depth: 3, score: 2.54125
+INFO:root:Iteration time: 0.19 seconds, memory_depth: 3, score: 2.59125
+INFO:root:Iteration time: 0.40 seconds, memory_depth: 3, score: 2.57625
+INFO:root:Iteration time: 1.76 seconds, memory_depth: 4, score: 2.6325000000000003
+INFO:root:Iteration time: 2.46 seconds, memory_depth: 4, score: 2.615
+INFO:root:Iteration time: 3.35 seconds, memory_depth: 4, score: 2.6624999999999996
+INFO:root:Iteration time: 0.82 seconds, memory_depth: 4, score: 2.53625
+INFO:root:Iteration time: 4.64 seconds, memory_depth: 4, score: 2.61875
+INFO:root:Results for memory_depth:
+INFO:root:   memory_depth  avg_time  avg_score
+0             3      0.87       2.65
+1             4      2.60       2.61
+INFO:root:Iteration time: 1.14 seconds, generations: 10, score: 2.6525
+INFO:root:Iteration time: 0.46 seconds, generations: 10, score: 2.65875
+INFO:root:Iteration time: 0.95 seconds, generations: 10, score: 2.7225
+INFO:root:Iteration time: 0.89 seconds, generations: 10, score: 2.73875
+INFO:root:Iteration time: 0.68 seconds, generations: 10, score: 2.7787500000000005
+INFO:root:Iteration time: 0.95 seconds, generations: 20, score: 2.56
+INFO:root:Iteration time: 0.85 seconds, generations: 20, score: 2.5650000000000004
+INFO:root:Iteration time: 1.16 seconds, generations: 20, score: 2.645
+INFO:root:Iteration time: 0.26 seconds, generations: 20, score: 2.58875
+INFO:root:Iteration time: 0.44 seconds, generations: 20, score: 2.6175
+INFO:root:Results for generations:
+INFO:root:   generations  avg_time  avg_score
+0           10      0.82       2.71
+1           20      0.73       2.60
+INFO:root:Iteration time: 219.15 seconds, pop_size: 50, score: 2.78125
+INFO:root:Iteration time: 319.40 seconds, pop_size: 50, score: 2.778125
+INFO:root:Iteration time: 399.07 seconds, pop_size: 50, score: 2.6681250000000003
