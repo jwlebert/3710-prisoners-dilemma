@@ -4,6 +4,7 @@ from OptimizationAlgorithm import OptimizedTournament
 import matplotlib.pyplot as plt
 import pandas as pd
 import time
+import logging
 
 
 def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
@@ -33,6 +34,67 @@ def HillClimbingExperiments(memory_depth, generations):
 # %%
 
 
+def create_table(df):
+    fig, ax = plt.subplots()
+    ax.axis("tight")
+    ax.axis("off")
+    table = ax.table(
+        cellText=df.values,
+        colLabels=df.columns,
+        cellLoc="center",
+        loc="center",
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+    table.auto_set_column_width(col=list(range(len(df.columns))))
+    plt.show()
+
+
+def run_experiments(
+    experiment_func,
+    param_name,
+    param_values,
+    fixed_params,
+    num_iterations,
+):
+    param_results = []
+    for value in param_values:
+        params = fixed_params.copy()
+        params[param_name] = value
+        iteration_scores = []
+        iteration_times = []
+
+        for _ in range(num_iterations):
+            iteration_start_time = time.time()
+
+            strategy, score = experiment_func(**params)
+            iteration_scores.append(score)
+
+            iteration_end_time = time.time()
+            iteration_time = iteration_end_time - iteration_start_time
+            iteration_times.append(iteration_time)
+            logging.info(f"Iteration time: {iteration_time:.2f} seconds")
+
+        avg_score = sum(iteration_scores) / num_iterations
+        avg_time = sum(iteration_times) / num_iterations
+        o = {
+            param_name: value,
+            "score": round(avg_score, 2),
+            "avg_time": round(avg_time, 2),
+        }
+        param_results.append(o)
+
+    df = pd.DataFrame(param_results)
+    df = df.sort_values(by="score", ascending=False)
+    logging.info(f"Results for {param_name}:")
+    logging.info(df)
+
+    create_table(df)
+
+    return df
+
+
 def run_genetic_experiments():
     results = []
     pop_sizes = [10, 20]
@@ -41,61 +103,6 @@ def run_genetic_experiments():
     generations = [10, 20]
     num_iterations = 5  # Number of times to run each iteration
 
-    def test_parameter(parameter_name, parameter_values, fixed_params):
-        param_results = []
-        for value in parameter_values:
-            params = fixed_params.copy()
-            params[parameter_name] = value
-            iteration_scores = []
-            iteration_times = []
-
-            for _ in range(num_iterations):
-                iteration_start_time = time.time()
-
-                genetic_strategy, genetic_score = GeneticExperiments(
-                    params["pop_size"],
-                    params["mutation_rate"],
-                    params["memory_depth"],
-                    params["generations"],
-                )
-                iteration_scores.append(genetic_score)
-
-                iteration_end_time = time.time()
-                iteration_time = iteration_end_time - iteration_start_time
-                iteration_times.append(iteration_time)
-                print(f"Iteration time: {iteration_time:.2f} seconds")
-
-            avg_score = sum(iteration_scores) / num_iterations
-            avg_time = sum(iteration_times) / num_iterations
-            o = {
-                parameter_name: value,
-                "genetic_score": round(avg_score, 2),
-                "avg_time": round(avg_time, 2),
-            }
-            param_results.append(o)
-
-        df = pd.DataFrame(param_results)
-        df = df.sort_values(by="genetic_score", ascending=False)
-        print(f"Results for {parameter_name}:")
-        print(df)
-
-        fig, ax = plt.subplots()
-        ax.axis("tight")
-        ax.axis("off")
-        table = ax.table(
-            cellText=df.values,
-            colLabels=df.columns,
-            cellLoc="center",
-            loc="center",
-        )
-        table.auto_set_font_size(False)
-        table.set_fontsize(10)
-        table.scale(1.2, 1.2)
-        table.auto_set_column_width(col=list(range(len(df.columns))))
-        plt.show()
-
-        return df
-
     fixed_params = {
         "pop_size": 10,
         "mutation_rate": 0.01,
@@ -103,10 +110,22 @@ def run_genetic_experiments():
         "generations": 10,
     }
 
-    test_parameter("pop_size", pop_sizes, fixed_params)
-    test_parameter("mutation_rate", mutation_rates, fixed_params)
-    test_parameter("memory_depth", memory_depths, fixed_params)
-    test_parameter("generations", generations, fixed_params)
+    run_experiments(
+        GeneticExperiments, "pop_size", pop_sizes, fixed_params, num_iterations
+    )
+    run_experiments(
+        GeneticExperiments,
+        "mutation_rate",
+        mutation_rates,
+        fixed_params,
+        num_iterations,
+    )
+    run_experiments(
+        GeneticExperiments, "memory_depth", memory_depths, fixed_params, num_iterations
+    )
+    run_experiments(
+        GeneticExperiments, "generations", generations, fixed_params, num_iterations
+    )
 
     return results
 
@@ -117,65 +136,25 @@ def run_hill_climbing_experiments():
     generations = [10, 20]
     num_iterations = 5  # Number of times to run each iteration
 
-    def test_parameter(parameter_name, parameter_values, fixed_params):
-        param_results = []
-        for value in parameter_values:
-            params = fixed_params.copy()
-            params[parameter_name] = value
-            iteration_scores = []
-            iteration_times = []
-
-            for _ in range(num_iterations):
-                iteration_start_time = time.time()
-
-                hill_climbing_strategy, hill_climbing_score = HillClimbingExperiments(
-                    params["memory_depth"], params["generations"]
-                )
-                iteration_scores.append(hill_climbing_score)
-
-                iteration_end_time = time.time()
-                iteration_time = iteration_end_time - iteration_start_time
-                iteration_times.append(iteration_time)
-                print(f"Iteration time: {iteration_time:.2f} seconds")
-
-            avg_score = sum(iteration_scores) / num_iterations
-            avg_time = sum(iteration_times) / num_iterations
-            o = {
-                parameter_name: value,
-                "hill_climbing_score": round(avg_score, 2),
-                "avg_time": round(avg_time, 2),
-            }
-            param_results.append(o)
-
-        df = pd.DataFrame(param_results)
-        df = df.sort_values(by="hill_climbing_score", ascending=False)
-        print(f"Results for {parameter_name}:")
-        print(df)
-
-        fig, ax = plt.subplots()
-        ax.axis("tight")
-        ax.axis("off")
-        table = ax.table(
-            cellText=df.values,
-            colLabels=df.columns,
-            cellLoc="center",
-            loc="center",
-        )
-        table.auto_set_font_size(False)
-        table.set_fontsize(10)
-        table.scale(1.2, 1.2)
-        table.auto_set_column_width(col=list(range(len(df.columns))))
-        plt.show()
-
-        return df
-
     fixed_params = {
         "memory_depth": 3,
         "generations": 10,
     }
 
-    test_parameter("memory_depth", memory_depths, fixed_params)
-    test_parameter("generations", generations, fixed_params)
+    run_experiments(
+        HillClimbingExperiments,
+        "memory_depth",
+        memory_depths,
+        fixed_params,
+        num_iterations,
+    )
+    run_experiments(
+        HillClimbingExperiments,
+        "generations",
+        generations,
+        fixed_params,
+        num_iterations,
+    )
 
     return results
 
