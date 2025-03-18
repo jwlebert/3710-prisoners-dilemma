@@ -66,7 +66,11 @@ def create_table(df, title):
 
 
 def create_parameter_graphs(df, param_name, title):
-    bright_palette = sns.color_palette("bright", n_colors=len(df[param_name].unique()))
+    # Create a lighter palette using 'husl' with high lightness
+    light_palette = sns.color_palette("husl", n_colors=len(df[param_name].unique()))
+
+    # Lighten the palette by increasing the lightness (this can be adjusted)
+    light_palette = [sns.utils.set_hls_values(c, l=0.7, s=0.6) for c in light_palette]
 
     # Create a single figure
     plt.figure(figsize=(10, 6))
@@ -83,7 +87,7 @@ def create_parameter_graphs(df, param_name, title):
         data=plot_df,
         x=param_name,
         y="scores",
-        palette=bright_palette,
+        palette=light_palette,
         hue=param_name,  # Add hue parameter
         width=0.5,
         saturation=0.7,
