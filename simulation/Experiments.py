@@ -1,11 +1,13 @@
 from algorithms.GeneticAlgorithm import GeneticAlgorithm
 from algorithms.HillClimbing import HillClimbing
+from algorithms.TabuSearch import TabuSearch
 from OptimizationAlgorithm import OptimizedTournament
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
 import time
+import json
 import logging
 
 from multiprocessing import Pool
@@ -14,9 +16,9 @@ import os
 
 logging.basicConfig(filename="experiment_logs.txt", level=logging.INFO, force=True)
 
+rounds = 100
 
 def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
-    rounds = 100
     ga = GeneticAlgorithm(
         pop_size=pop_size, mutation_rate=mutation_rate, memory_depth=memory_depth
     )
@@ -29,7 +31,6 @@ def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
 
 
 def HillClimbingExperiments(memory_depth, generations):
-    rounds = 100
     hc = HillClimbing(memory_depth=memory_depth, rounds=rounds)
     hc.train(generations=generations, rounds=rounds)
     hill_climbing_strategy = hc.best_strategy()
@@ -38,11 +39,20 @@ def HillClimbingExperiments(memory_depth, generations):
         OptimizedTournament(hill_climbing_strategy, memory_depth, rounds).get_score(),
     )
 
+def TabuSearchExperiment(tabu_len, memory_depth, generations):
+    ts = TabuSearch(tabu_len=tabu_len, memory_depth=memory_depth, rounds=rounds)
+    ts.train(generations=generations, rounds=rounds)
+    tabu_search_strategy = ts.best_strategy()
+    return (
+        tabu_search_strategy,
+        OptimizedTournament(tabu_search_strategy, memory_depth, rounds).get_score(),
+    )
+
 
 # %%
 
 
-def create_table(df, title):
+def create_table(df, title, save_path: str):
     fig, ax = plt.subplots()
     ax.axis("tight")
     ax.axis("off")
@@ -62,10 +72,11 @@ def create_table(df, title):
 
     plt.tight_layout()
 
+    plt.savefig(f"{save_path}_table.png")
+
     plt.show()
 
-
-def create_parameter_graphs(df, param_name, title):
+ def create_parameter_graphs(df, param_name, title):
     # Create a lighter palette using 'husl' with high lightness
     light_palette = sns.color_palette("husl", n_colors=len(df[param_name].unique()))
 
@@ -129,6 +140,7 @@ def create_parameter_graphs(df, param_name, title):
 
     # Adjust layout
     plt.tight_layout()
+    plt.savefig(f"{save_path}_param_graph.png")
     plt.show()
 
 
@@ -145,7 +157,7 @@ def run_single_experiment(params):
 
 
 def run_experiments(
-    experiment_func, param_name, param_values, fixed_params, num_iterations, title
+    experiment_func, param_name, param_values, fixed_params, num_iterations, title, save_path
 ):
     all_iterations = []  # To store individual iteration results
 
@@ -196,7 +208,7 @@ def run_experiments(
     summary_df.columns = [param_name, "avg_score", "avg_time"]
 
     # Create visual summaries
-    create_table(summary_df, f"{title} - Table")
+    create_table(summary_df, f"{title} - Table", f"{save_path}/{param_name}")
 
     # Modified line to use 'score' instead of 'scores'
     grouped_scores = results_df.groupby(param_name)[["score"]].agg(list).reset_index()
@@ -205,25 +217,29 @@ def run_experiments(
         grouped_scores,
         param_name,
         title,
+        f"{save_path}/{param_name}",
     )
 
     return results_df
 
 
-def run_genetic_experiments():
+def run_genetic_experiments(img_path: str):
     results = []
-    pop_sizes = [20, 10]
-    mutation_rates = [0.01, 0.05]
-    memory_depths = [3, 4]
-    generations = [10, 20, 30]
+    pop_sizes = [80, 100, 150]
+    mutation_rates = [0.01, 0.05, 0.001]
+    memory_depths = [3, 4, 5]
+    generations = [100, 250, 500]
     num_iterations = 5  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 20,
-        "mutation_rate": 0.01,
+        "pop_size": 80,
+        "mutation_rate": 0.001,
         "memory_depth": 3,
-        "generations": 20,
+        "generations": 250,
     }
+
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
         run_experiments(
@@ -233,6 +249,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Population Size",
+            img_path
         )
     )
     results.append(
@@ -243,6 +260,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Mutation Rate",
+            img_path
         )
     )
 
@@ -254,6 +272,7 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Memory Depth",
+            img_path
         )
     )
     results.append(
@@ -264,15 +283,16 @@ def run_genetic_experiments():
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Generations",
+            img_path
         )
     )
 
     return results
 
 
-def run_hill_climbing_experiments():
+def run_hill_climbing_experiments(img_path: str):
     results = []
-    memory_depths = [3, 4]
+    memory_depths = [3, 4, 5]
     generations = [100, 50]
     num_iterations = 10  # Number of times to run each iteration
 
@@ -280,6 +300,9 @@ def run_hill_climbing_experiments():
         "memory_depth": 3,
         "generations": 100,
     }
+
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
         run_experiments(
@@ -289,6 +312,7 @@ def run_hill_climbing_experiments():
             fixed_params,
             num_iterations,
             "Hill Climbing - Memory Depth",
+            img_path,
         )
     )
     results.append(
@@ -299,6 +323,59 @@ def run_hill_climbing_experiments():
             fixed_params,
             num_iterations,
             "Hill Climbing - Generations",
+            img_path,
+        )
+    )
+
+    return results
+
+def run_tabu_search_experiments(img_path: str):
+    results = []
+    memory_depths = [3, 4, 5]
+    generations = [50, 100, 250]
+    tabu_len = [50, 100, 200]
+    num_iterations = 10  # Number of times to run each iteration
+
+    fixed_params = {
+        "memory_depth": 3,
+        "generations": 100,
+        "tabu_len": 100,
+    }
+
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
+
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "tabu_len",
+            tabu_len,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Tabu Len",
+            img_path
+        )
+    )
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "memory_depth",
+            memory_depths,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Memory Depth",
+            img_path
+        )
+    )
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "generations",
+            generations,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Generations",
+            img_path
         )
     )
 
@@ -307,32 +384,45 @@ def run_hill_climbing_experiments():
 
 # %%
 def main():
-    timestamp = time.strftime("%Y%m%d_%H%M%S")
-
-    print("Running Genetic Algorithm Experiments...")
-    genetic_results = run_genetic_experiments()
-
-    print("\nRunning Hill Climbing Experiments...")
-    hillclimbing_results = run_hill_climbing_experiments()
+    timestamp = time.strftime("%Y-%m-%d/%H:%M:%S")
 
     # Save results to CSV files
-    results_dir = "experiment_results"
-    os.makedirs(results_dir, exist_ok=True)
+    results_dir = f"experiment_results/{timestamp}"
+    # os.makedirs(results_dir, exist_ok=True)
 
     # Save each experiment's results with descriptive names
     experiment_names = {
         "genetic": ["population_size", "mutation_rate", "memory_depth", "generations"],
         "hillclimbing": ["memory_depth", "generations"],
+        "tabu": ["tabu_len", "memory_depth", "generations"],
     }
+
+    print("\nRunning Hill Climbing Experiments...")
+    os.makedirs(f"{results_dir}/hillclimbing", exist_ok=True)
+    hillclimbing_results = run_hill_climbing_experiments(f"{results_dir}/hillclimbing")
+
+    for i, df in enumerate(hillclimbing_results):
+        filename = f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+        df.to_csv(filename, index=False)
+
+
+    print("\nRunning Tabu Search Experiments...")
+    os.makedirs(f"{results_dir}/tabu", exist_ok=True)
+    tabu_search_results = run_tabu_search_experiments(f"{results_dir}/tabu")
+
+    for i, df in enumerate(tabu_search_results):
+        filename = f"{results_dir}/tabu/{experiment_names['tabu'][i]}.csv"
+        df.to_csv(filename, index=False)
+
+
+    print("Running Genetic Algorithm Experiments...")
+    os.makedirs(f"{results_dir}/genetic", exist_ok=True)
+    genetic_results = run_genetic_experiments(f"{results_dir}/genetic")
 
     for i, df in enumerate(genetic_results):
         filename = (
-            f"{results_dir}/genetic_{experiment_names['genetic'][i]}_{timestamp}.csv"
+            f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
         )
-        df.to_csv(filename, index=False)
-
-    for i, df in enumerate(hillclimbing_results):
-        filename = f"{results_dir}/hillclimbing_{experiment_names['hillclimbing'][i]}_{timestamp}.csv"
         df.to_csv(filename, index=False)
 
 

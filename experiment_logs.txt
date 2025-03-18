@@ -1,0 +1,40 @@
+INFO:root:Iteration time: 68.71 seconds, pop_size: 50, score: 2.665
+INFO:root:Iteration time: 65.83 seconds, pop_size: 50, score: 2.7925
+INFO:root:Iteration time: 62.88 seconds, pop_size: 50, score: 2.6437500000000003
+INFO:root:Iteration time: 64.97 seconds, pop_size: 50, score: 2.7762500000000006
+INFO:root:Iteration time: 62.25 seconds, pop_size: 50, score: 2.755
+INFO:root:Iteration time: 127.69 seconds, pop_size: 100, score: 2.7612500000000004
+INFO:root:Iteration time: 90.83 seconds, pop_size: 100, score: 2.8025
+INFO:root:Iteration time: 68.34 seconds, pop_size: 100, score: 2.77625
+INFO:root:Iteration time: 67.20 seconds, pop_size: 100, score: 2.70125
+INFO:root:Iteration time: 69.81 seconds, pop_size: 100, score: 2.81
+INFO:root:Iteration time: 138.04 seconds, pop_size: 200, score: 2.75625
+INFO:root:Iteration time: 141.47 seconds, pop_size: 200, score: 2.82
+INFO:root:Iteration time: 135.70 seconds, pop_size: 200, score: 2.78625
+INFO:root:Iteration time: 137.36 seconds, pop_size: 200, score: 2.8225000000000002
+INFO:root:Iteration time: 1049.90 seconds, pop_size: 200, score: 2.74
+INFO:root:Results for pop_size:
+INFO:root:   pop_size  avg_time  avg_score
+2       200    320.50       2.79
+1       100     84.77       2.77
+0        50     64.93       2.73
+INFO:root:Iteration time: 74.44 seconds, mutation_rate: 0.001, score: 2.71125
+INFO:root:Iteration time: 72.27 seconds, mutation_rate: 0.001, score: 2.6199999999999997
+INFO:root:Iteration time: 73.49 seconds, mutation_rate: 0.001, score: 2.63
+INFO:root:Iteration time: 75.04 seconds, mutation_rate: 0.001, score: 2.57375
+INFO:root:Iteration time: 73.79 seconds, mutation_rate: 0.001, score: 2.665
+INFO:root:Iteration time: 68.06 seconds, mutation_rate: 0.01, score: 2.7187500000000004
+INFO:root:Iteration time: 65.44 seconds, mutation_rate: 0.01, score: 2.7550000000000003
+INFO:root:Iteration time: 74.32 seconds, mutation_rate: 0.01, score: 2.7487500000000002
+INFO:root:Iteration time: 74.59 seconds, mutation_rate: 0.01, score: 2.6775
+INFO:root:Iteration time: 2477.57 seconds, mutation_rate: 0.01, score: 2.7062500000000003
+INFO:root:Iteration time: 87.69 seconds, mutation_rate: 0.05, score: 2.66125
+INFO:root:Iteration time: 77.70 seconds, mutation_rate: 0.05, score: 2.71
+INFO:root:Iteration time: 78.47 seconds, mutation_rate: 0.05, score: 2.68875
+INFO:root:Iteration time: 75.84 seconds, mutation_rate: 0.05, score: 2.6462499999999998
+INFO:root:Iteration time: 64.60 seconds, mutation_rate: 0.05, score: 2.6925000000000003
+INFO:root:Results for mutation_rate:
+INFO:root:   mutation_rate  avg_time  avg_score
+1          0.010    552.00       2.72
+2          0.050     76.86       2.68
+0          0.001     73.81       2.64
