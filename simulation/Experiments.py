@@ -51,10 +51,10 @@ def create_table(df, title):
     table.scale(1.2, 1.2)
     table.auto_set_column_width(col=list(range(len(df.columns))))
 
-    plt.figtext(0.5, 0.95, title, ha="center", fontsize=14)
+    # Add title above the table
+    plt.figtext(0.5, 0.85, title, ha="center", fontsize=14)
 
     plt.tight_layout()
-    plt.subplots_adjust(top=0.85)  # Adjust the top to make space for the title
 
     plt.show()
 
