@@ -7,6 +7,7 @@ import pandas as pd
 import seaborn as sns
 
 import time
+import json
 import logging
 
 from multiprocessing import Pool
@@ -234,6 +235,9 @@ def run_genetic_experiments(img_path: str):
         "generations": 250,
     }
 
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
+
     results.append(
         run_experiments(
             GeneticExperiments,
@@ -294,6 +298,9 @@ def run_hill_climbing_experiments(img_path: str):
         "generations": 100,
     }
 
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
+
     results.append(
         run_experiments(
             HillClimbingExperiments,
@@ -331,6 +338,9 @@ def run_tabu_search_experiments(img_path: str):
         "generations": 100,
         "tabu_len": 100,
     }
+
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
         run_experiments(
