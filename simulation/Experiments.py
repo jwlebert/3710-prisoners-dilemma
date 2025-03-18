@@ -1,5 +1,6 @@
 from algorithms.GeneticAlgorithm import GeneticAlgorithm
 from algorithms.HillClimbing import HillClimbing
+from algorithms.TabuSearch import TabuSearch
 from OptimizationAlgorithm import OptimizedTournament
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -14,9 +15,9 @@ import os
 
 logging.basicConfig(filename="experiment_logs.txt", level=logging.INFO, force=True)
 
+rounds = 100
 
 def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
-    rounds = 100
     ga = GeneticAlgorithm(
         pop_size=pop_size, mutation_rate=mutation_rate, memory_depth=memory_depth
     )
@@ -29,13 +30,21 @@ def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
 
 
 def HillClimbingExperiments(memory_depth, generations):
-    rounds = 100
     hc = HillClimbing(memory_depth=memory_depth, rounds=rounds)
     hc.train(generations=generations, rounds=rounds)
     hill_climbing_strategy = hc.best_strategy()
     return (
         hill_climbing_strategy,
         OptimizedTournament(hill_climbing_strategy, memory_depth, rounds).get_score(),
+    )
+
+def TabuSearchExperiment(tabu_len, memory_depth, generations):
+    ts = TabuSearch(tabu_len=tabu_len, memory_depth=memory_depth, rounds=rounds)
+    ts.train(generations=generations, rounds=rounds)
+    tabu_search_strategy = ts.best_strategy()
+    return (
+        tabu_search_strategy,
+        OptimizedTournament(tabu_search_strategy, memory_depth, rounds).get_score(),
     )
 
 
@@ -208,17 +217,17 @@ def run_experiments(
 
 def run_genetic_experiments():
     results = []
-    pop_sizes = [20, 10]
-    mutation_rates = [0.01, 0.05]
-    memory_depths = [3, 4]
-    generations = [10, 20, 30]
+    pop_sizes = [80, 100, 150]
+    mutation_rates = [0.01, 0.05, 0.001]
+    memory_depths = [3, 4, 5]
+    generations = [100, 250, 500]
     num_iterations = 5  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 20,
-        "mutation_rate": 0.01,
+        "pop_size": 80,
+        "mutation_rate": 0.001,
         "memory_depth": 3,
-        "generations": 20,
+        "generations": 250,
     }
 
     results.append(
@@ -268,7 +277,7 @@ def run_genetic_experiments():
 
 def run_hill_climbing_experiments():
     results = []
-    memory_depths = [3, 4]
+    memory_depths = [3, 4, 5]
     generations = [100, 50]
     num_iterations = 10  # Number of times to run each iteration
 
@@ -295,6 +304,52 @@ def run_hill_climbing_experiments():
             fixed_params,
             num_iterations,
             "Hill Climbing - Generations",
+        )
+    )
+
+    return results
+
+def run_tabu_search_experiments():
+    results = []
+    memory_depths = [3, 4, 5]
+    generations = [50, 100, 250]
+    tabu_len = [50, 100, 200]
+    num_iterations = 10  # Number of times to run each iteration
+
+    fixed_params = {
+        "memory_depth": 3,
+        "generations": 100,
+        "tabu_len": 100,
+    }
+
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "tabu_len",
+            tabu_len,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Tabu Len",
+        )
+    )
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "memory_depth",
+            memory_depths,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Memory Depth",
+        )
+    )
+    results.append(
+        run_experiments(
+            TabuSearchExperiment,
+            "generations",
+            generations,
+            fixed_params,
+            num_iterations,
+            "Tabu Search - Generations",
         )
     )
 
