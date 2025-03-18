@@ -66,24 +66,24 @@ def create_table(df, title):
 
 
 def create_parameter_graphs(df, param_name, title):
+    bright_palette = sns.set_palette("bright", 8)
+
     # Create a single figure
     plt.figure(figsize=(10, 6))
 
-    # Convert parameter values to strings for consistent color mapping
-    df[param_name] = df[param_name].astype(str)
-
-    # Explode the scores list into separate rows
+    # Use the same data processing as the table
     plot_df = df.explode("scores")
     plot_df["scores"] = plot_df["scores"].astype(float)
 
-    # Calculate average scores for each parameter value
-    avg_scores = plot_df.groupby(param_name)["scores"].mean()
+    # Calculate averages using the same method as the table
+    avg_scores = plot_df.groupby(param_name)["scores"].mean().round(2)
 
     # Create the boxplot with updated syntax
     sns.boxplot(
         data=plot_df,
         x=param_name,
         y="scores",
+        palette=bright_palette,
         hue=param_name,  # Add hue parameter
         width=0.5,
         saturation=0.7,
@@ -108,7 +108,7 @@ def create_parameter_graphs(df, param_name, title):
         ax.text(
             i,
             ax.get_ylim()[1],
-            f"Avg: {avg:.2f}",
+            f"Avg: {avg}",  # Remove .2f to use the already rounded value
             horizontalalignment="center",
             verticalalignment="bottom",
         )
