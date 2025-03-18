@@ -79,3 +79,45 @@ class Pavlov(Strategy):
             return Action.DEFECT
         else:
             return Action.COOPERATE
+
+class GrimTrigger(Strategy):
+    def __init__(self, match: Match):
+        super().__init__(match)
+        self.trigger = False
+
+    def next_move(self):
+        if self.trigger:
+            return Action.DEFECT
+        
+        if len(self.history) and self.history[-1][1] == Action.DEFECT:
+            self.trigger = True
+            return Action.DEFECT
+        
+        return Action.COOPERATE
+
+class Prober(Strategy):
+    def __init__(self, match: Match):
+        super().__init__(match)
+        self.exploit = False
+
+    def next_move(self):
+        turn = len(self.history)
+
+        # probe
+        if turn == 0:
+            return Action.COOPERATE
+        elif turn == 1:
+            return Action.DEFECT
+        elif turn == 2:
+            return Action.COOPERATE
+        elif turn == 3: 
+            if (
+                self.history[1][1] == Action.COOPERATE and
+                self.history[2][1] == Action.COOPERATE
+            ): self.exploit = True
+
+        if self.exploit:
+            return Action.DEFECT
+        else: # TFT
+            opponent_last_move = self.history[-1][1]
+            return opponent_last_move

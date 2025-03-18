@@ -14,6 +14,8 @@ from Strategy import (
     Random,
     GenerousTitForTat,
     Pavlov,
+    GrimTrigger,
+    Prober
 )
 
 strategies = [
@@ -25,6 +27,8 @@ strategies = [
     Random,
     GenerousTitForTat,
     Pavlov,
+    GrimTrigger,
+    Prober
 ]
 
 from OptimizationAlgorithm import BitArrayStrategy

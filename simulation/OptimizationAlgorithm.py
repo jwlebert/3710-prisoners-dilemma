@@ -11,6 +11,8 @@ from Strategy import (
     Random,
     GenerousTitForTat,
     Pavlov,
+    GrimTrigger,
+    Prober
 )
 
 strategies = [
@@ -22,6 +24,8 @@ strategies = [
     Random,
     GenerousTitForTat,
     Pavlov,
+    GrimTrigger,
+    Prober
 ]
 
 
@@ -84,7 +88,7 @@ class OptimizationAlgorithm:
         else:
             for gen in range(generations + 1):
                 if gen % log_freq == 0:
-                    pass  # implement logging
+                    print(gen)
 
                 if self.step(rounds) is not None:
                     return self.best_strategy()
