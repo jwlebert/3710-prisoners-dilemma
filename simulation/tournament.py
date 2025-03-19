@@ -78,37 +78,72 @@ def table(results):
         strategies.add(strat2)
 
     strategies = sorted(strategies)
-    data = {strat: {s: 0 for s in strategies} for strat in strategies}
+    data = {s: {s2: 0 for s2 in strategies} for s in strategies}
 
     for (strat1, strat2), (_, score2) in results.items():
         data[strat1][strat2] = score2
 
-    frame = pd.DataFrame(data)
-    frame["Avg"] = frame.mean(axis=1)
+    # Convert to DataFrame
+    frame = pd.DataFrame(data).round(2)
 
-    # Sorting by avg
+    # Add Average column and round to 2 decimals
+    frame["Avg"] = frame.mean(axis=1).round(2)
+
+    # Sort by average score
     frame = frame.sort_values(by="Avg", ascending=False)
 
-    frame = frame.round(2)
+    # Display full table
+    print("\nFull Tournament Table:")
     print(frame)
+
+    # Split into two tables
+    optimization_algorithms = ["GeneticAlgorithm", "HillClimbing", "TabuSearch"]
+    optimization_df = frame.loc[frame.index.isin(optimization_algorithms)]
+    other_df = frame.loc[~frame.index.isin(optimization_algorithms)]
+
+    optimization_df = optimization_df.transpose().round(2)
+
+    # Display optimization algorithms table
+    print("\nOptimization Algorithms Table:")
+    print(optimization_df)
 
     fig, ax = plot.subplots()
     ax.axis("tight")
     ax.axis("off")
     table = ax.table(
-        cellText=frame.values,
-        colLabels=frame.columns,
-        rowLabels=frame.index,
+        cellText=optimization_df.values,
+        colLabels=optimization_df.columns,
+        rowLabels=optimization_df.index,
         cellLoc="center",
         loc="center",
     )
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     table.scale(1.2, 1.2)
-    table.auto_set_column_width(col=list(range(len(frame.columns))))
+    table.auto_set_column_width(col=list(range(len(optimization_df.columns))))
     plot.show()
 
-    return frame
+    # Display other strategies table
+    print("\nOther Strategies Table:")
+    print(other_df)
+
+    fig, ax = plot.subplots()
+    ax.axis("tight")
+    ax.axis("off")
+    table = ax.table(
+        cellText=other_df.values,
+        colLabels=other_df.columns,
+        rowLabels=other_df.index,
+        cellLoc="center",
+        loc="center",
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+    table.auto_set_column_width(col=list(range(len(other_df.columns))))
+    plot.show()
+
+    return frame, optimization_df, other_df
 
 
 # %%
@@ -146,7 +181,7 @@ if __name__ == "__main__":
     ]
 
     results = tournament(strategies)
-    frame = table(results)
+    frame, optimization_df, other_df = table(results)
     heatmap(frame)
 
 # %%
