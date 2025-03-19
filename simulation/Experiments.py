@@ -18,6 +18,7 @@ logging.basicConfig(filename="experiment_logs.txt", level=logging.INFO, force=Tr
 
 rounds = 100
 
+
 def GeneticExperiments(pop_size, mutation_rate, memory_depth, generations):
     ga = GeneticAlgorithm(
         pop_size=pop_size, mutation_rate=mutation_rate, memory_depth=memory_depth
@@ -38,6 +39,7 @@ def HillClimbingExperiments(memory_depth, generations):
         hill_climbing_strategy,
         OptimizedTournament(hill_climbing_strategy, memory_depth, rounds).get_score(),
     )
+
 
 def TabuSearchExperiment(tabu_len, memory_depth, generations):
     ts = TabuSearch(tabu_len=tabu_len, memory_depth=memory_depth, rounds=rounds)
@@ -157,7 +159,13 @@ def run_single_experiment(params):
 
 
 def run_experiments(
-    experiment_func, param_name, param_values, fixed_params, num_iterations, title, save_path
+    experiment_func,
+    param_name,
+    param_values,
+    fixed_params,
+    num_iterations,
+    title,
+    save_path,
 ):
     all_iterations = []  # To store individual iteration results
 
@@ -238,7 +246,7 @@ def run_genetic_experiments(img_path: str):
         "generations": 250,
     }
 
-    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+    with open(f"{img_path}/fixed.json", "w", encoding="utf-8") as f:
         json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
@@ -249,7 +257,7 @@ def run_genetic_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Population Size",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/pop_size_inline.csv"
@@ -263,7 +271,7 @@ def run_genetic_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Mutation Rate",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/mutation_rate_inline.csv"
@@ -277,7 +285,7 @@ def run_genetic_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Memory Depth",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/memory_depth_inline.csv"
@@ -291,7 +299,7 @@ def run_genetic_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Genetic Algorithm - Generations",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/memory_depth_inline.csv"
@@ -311,7 +319,7 @@ def run_hill_climbing_experiments(img_path: str):
         "generations": 250,
     }
 
-    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+    with open(f"{img_path}/fixed.json", "w", encoding="utf-8") as f:
         json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
@@ -344,6 +352,7 @@ def run_hill_climbing_experiments(img_path: str):
 
     return results
 
+
 def run_tabu_search_experiments(img_path: str):
     results = []
     memory_depths = [1, 2, 3, 4, 5]
@@ -357,7 +366,7 @@ def run_tabu_search_experiments(img_path: str):
         "tabu_len": 100,
     }
 
-    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+    with open(f"{img_path}/fixed.json", "w", encoding="utf-8") as f:
         json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
     results.append(
@@ -368,7 +377,7 @@ def run_tabu_search_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Tabu Search - Tabu Len",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/tabu_len_inline.csv"
@@ -382,7 +391,7 @@ def run_tabu_search_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Tabu Search - Memory Depth",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/memory_depth_inline.csv"
@@ -396,7 +405,7 @@ def run_tabu_search_experiments(img_path: str):
             fixed_params,
             num_iterations,
             "Tabu Search - Generations",
-            img_path
+            img_path,
         )
     )
     filename = f"{img_path}/generations_inline.csv"
@@ -425,9 +434,10 @@ def main():
     hillclimbing_results = run_hill_climbing_experiments(f"{results_dir}/hillclimbing")
 
     for i, df in enumerate(hillclimbing_results):
-        filename = f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+        filename = (
+            f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+        )
         df.to_csv(filename, index=False)
-
 
     print("\nRunning Tabu Search Experiments...")
     os.makedirs(f"{results_dir}/tabu", exist_ok=True)
@@ -437,15 +447,12 @@ def main():
         filename = f"{results_dir}/tabu/{experiment_names['tabu'][i]}.csv"
         df.to_csv(filename, index=False)
 
-
     print("Running Genetic Algorithm Experiments...")
     os.makedirs(f"{results_dir}/genetic", exist_ok=True)
     genetic_results = run_genetic_experiments(f"{results_dir}/genetic")
 
     for i, df in enumerate(genetic_results):
-        filename = (
-            f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
-        )
+        filename = f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
         df.to_csv(filename, index=False)
 
 
