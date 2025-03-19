@@ -972,607 +972,455 @@ INFO:matplotlib.category:Using categorical units to plot a list of strings that 
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.67, avg_time: 2.76
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.56, avg_time: 1.19
-=======
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.68, avg_time: 0.78
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.56, avg_time: 0.40
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.62, avg_time: 2.80
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.73, avg_time: 2.49
-=======
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.61, avg_time: 0.77
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.58, avg_time: 0.80
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.68, avg_time: 2.80
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.63, avg_time: 2.52
-=======
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 0.79
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 0.80
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.63, avg_time: 1.50
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.62, avg_time: 2.85
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.60, avg_time: 3.90
-=======
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.62, avg_time: 0.40
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.60, avg_time: 0.76
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.60, avg_time: 1.09
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.68, avg_time: 2.06
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.68, avg_time: 8.20
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.63, avg_time: 0.49
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 1.59
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.70, avg_time: 3.03
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.65, avg_time: 1.64
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.64, avg_time: 0.37
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.64, avg_time: 0.49
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.63, avg_time: 2.90
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.62, avg_time: 1.23
-=======
 INFO:root:Completed 5 iterations for pop_size: 80, avg_score: 2.66, avg_time: 38.34
 INFO:root:Completed 5 iterations for pop_size: 100, avg_score: 2.74, avg_time: 50.63
 INFO:root:Completed 5 iterations for pop_size: 125, avg_score: 2.73, avg_time: 57.94
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.67, avg_time: 2.79
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.68, avg_time: 3.20
-=======
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.77, avg_time: 36.09
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.75, avg_time: 39.78
 INFO:root:Completed 5 iterations for mutation_rate: 0.001, avg_score: 2.73, avg_time: 38.14
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.64, avg_time: 3.05
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.64, avg_time: 2.72
-=======
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.70, avg_time: 38.41
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.70, avg_time: 36.18
 INFO:root:Completed 5 iterations for memory_depth: 5, avg_score: 2.62, avg_time: 39.63
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.65, avg_time: 1.76
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.69, avg_time: 2.51
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.61, avg_time: 3.46
-=======
 INFO:root:Completed 5 iterations for generations: 100, avg_score: 2.72, avg_time: 15.94
 INFO:root:Completed 5 iterations for generations: 250, avg_score: 2.71, avg_time: 38.04
 INFO:root:Completed 5 iterations for generations: 500, avg_score: 2.71, avg_time: 75.90
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 1.49
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.66, avg_time: 9.08
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.67, avg_time: 0.65
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.61, avg_time: 2.10
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.66, avg_time: 2.63
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.66, avg_time: 1.91
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.62, avg_time: 0.56
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.63, avg_time: 0.43
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.64, avg_time: 6.35
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.57, avg_time: 1.86
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.68, avg_time: 0.57
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.56, avg_time: 1.40
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.62, avg_time: 5.95
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.67, avg_time: 5.22
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.65, avg_time: 6.90
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.68, avg_time: 0.51
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.65, avg_time: 0.67
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 6.69
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.55, avg_time: 5.97
-=======
 INFO:root:Completed 10 iterations for tabu_len: 50, avg_score: 2.64, avg_time: 0.78
 INFO:root:Completed 10 iterations for tabu_len: 100, avg_score: 2.65, avg_time: 0.93
 INFO:root:Completed 10 iterations for tabu_len: 200, avg_score: 2.63, avg_time: 0.80
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.64, avg_time: 4.79
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.61, avg_time: 5.75
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.70, avg_time: 19.69
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.71, avg_time: 0.93
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.64, avg_time: 2.50
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.72, avg_time: 0.55
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.65, avg_time: 1.75
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.60, avg_time: 6.71
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.62, avg_time: 8.39
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.65, avg_time: 13.87
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.56, avg_time: 2.27
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.68, avg_time: 0.62
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.69, avg_time: 0.63
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.62, avg_time: 12.74
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.64, avg_time: 11.16
-=======
 INFO:root:Completed 10 iterations for tabu_len: 50, avg_score: 2.64, avg_time: 0.73
 INFO:root:Completed 10 iterations for tabu_len: 100, avg_score: 2.69, avg_time: 0.80
 INFO:root:Completed 10 iterations for tabu_len: 200, avg_score: 2.68, avg_time: 0.91
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.61, avg_time: 6.30
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.53, avg_time: 2.73
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 0.72
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 3.01
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.59, avg_time: 10.27
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.62, avg_time: 5.23
-INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.71, avg_time: 6.61
-=======
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.73, avg_time: 1.00
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.67, avg_time: 0.74
 INFO:root:Completed 10 iterations for generations: 250, avg_score: 2.68, avg_time: 0.72
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 8.77
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 6.59
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 0.41
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.59, avg_time: 1.59
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.65, avg_time: 8.85
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.65, avg_time: 6.00
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.65, avg_time: 10.92
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.66, avg_time: 5.30
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.63, avg_time: 7.03
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.66, avg_time: 0.49
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.61, avg_time: 0.44
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.57, avg_time: 15.67
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.64, avg_time: 4.24
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 0.40
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.65, avg_time: 2.09
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.59, avg_time: 8.36
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.61, avg_time: 8.30
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.61, avg_time: 9.54
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.67, avg_time: 0.49
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.65, avg_time: 0.58
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.65, avg_time: 4.56
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.67, avg_time: 15.89
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.65, avg_time: 6.43
-=======
 INFO:root:Completed 10 iterations for tabu_len: 50, avg_score: 2.69, avg_time: 0.95
 INFO:root:Completed 10 iterations for tabu_len: 100, avg_score: 2.69, avg_time: 0.76
 INFO:root:Completed 10 iterations for tabu_len: 200, avg_score: 2.62, avg_time: 0.55
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.63, avg_time: 8.28
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.60, avg_time: 24.61
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.67, avg_time: 0.97
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.64, avg_time: 3.40
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.58, avg_time: 10.62
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.71, avg_time: 4.31
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.67, avg_time: 6.72
-=======
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.72, avg_time: 1.01
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.65, avg_time: 0.67
 INFO:root:Completed 10 iterations for generations: 250, avg_score: 2.69, avg_time: 0.68
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.64, avg_time: 1.26
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.58, avg_time: 0.62
-=======
 INFO:root:Completed 5 iterations for pop_size: 80, avg_score: 2.72, avg_time: 35.12
 INFO:root:Completed 5 iterations for pop_size: 100, avg_score: 2.66, avg_time: 44.13
 INFO:root:Completed 5 iterations for pop_size: 150, avg_score: 2.69, avg_time: 66.00
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.65, avg_time: 1.34
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.66, avg_time: 1.37
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.58, avg_time: 0.65
-=======
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.79, avg_time: 36.62
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.68, avg_time: 34.59
 INFO:root:Completed 5 iterations for mutation_rate: 0.001, avg_score: 2.72, avg_time: 33.42
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.68, avg_time: 1.38
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.65, avg_time: 1.45
-=======
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 35.48
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.72, avg_time: 38.60
 INFO:root:Completed 5 iterations for memory_depth: 5, avg_score: 2.74, avg_time: 41.85
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.61, avg_time: 1.68
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.67, avg_time: 1.76
-=======
 INFO:root:Completed 5 iterations for generations: 100, avg_score: 2.69, avg_time: 13.88
 INFO:root:Completed 5 iterations for generations: 250, avg_score: 2.71, avg_time: 36.40
 INFO:root:Completed 5 iterations for generations: 500, avg_score: 2.76, avg_time: 72.03
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.63, avg_time: 0.89
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.60, avg_time: 1.69
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.71, avg_time: 2.55
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 0.46
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 1.58
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.55, avg_time: 5.33
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.64, avg_time: 1.06
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.63, avg_time: 5.05
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.69, avg_time: 0.58
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.69, avg_time: 0.66
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.68, avg_time: 2.51
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.58, avg_time: 1.12
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.63, avg_time: 0.42
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.59, avg_time: 1.46
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.56, avg_time: 6.92
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.69, avg_time: 2.57
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.67, avg_time: 2.77
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.64, avg_time: 0.50
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.64, avg_time: 0.51
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.70, avg_time: 2.33
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.68, avg_time: 2.84
-=======
+
 INFO:root:Completed 10 iterations for tabu_len: 50, avg_score: 2.70, avg_time: 1.19
 INFO:root:Completed 10 iterations for tabu_len: 100, avg_score: 2.67, avg_time: 1.01
 INFO:root:Completed 10 iterations for tabu_len: 200, avg_score: 2.66, avg_time: 0.90
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.64, avg_time: 1.70
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.64, avg_time: 2.41
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.65, avg_time: 3.65
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.63, avg_time: 0.54
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 2.70
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.66, avg_time: 12.08
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 2.08
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.63, avg_time: 5.82
-=======
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.67, avg_time: 0.70
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.59, avg_time: 0.64
 INFO:root:Completed 10 iterations for generations: 250, avg_score: 2.71, avg_time: 0.91
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.64, avg_time: 1.51
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.64, avg_time: 1.38
-=======
 INFO:root:Completed 5 iterations for pop_size: 80, avg_score: 2.69, avg_time: 35.43
 INFO:root:Completed 5 iterations for pop_size: 100, avg_score: 2.73, avg_time: 47.33
 INFO:root:Completed 5 iterations for pop_size: 150, avg_score: 2.78, avg_time: 69.28
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.60, avg_time: 12.16
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.56, avg_time: 2.90
-=======
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.72, avg_time: 35.64
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.75, avg_time: 35.57
 INFO:root:Completed 5 iterations for mutation_rate: 0.001, avg_score: 2.77, avg_time: 37.18
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.60, avg_time: 10.30
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.66, avg_time: 6.37
-=======
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.70, avg_time: 35.19
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.69, avg_time: 36.73
 INFO:root:Completed 5 iterations for memory_depth: 5, avg_score: 2.67, avg_time: 38.04
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.70, avg_time: 9.43
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.60, avg_time: 13.61
-=======
 INFO:root:Completed 5 iterations for generations: 100, avg_score: 2.63, avg_time: 14.74
 INFO:root:Completed 5 iterations for generations: 250, avg_score: 2.74, avg_time: 36.41
 INFO:root:Completed 5 iterations for generations: 500, avg_score: 2.73, avg_time: 75.15
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.67, avg_time: 7.16
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.67, avg_time: 7.33
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.63, avg_time: 15.12
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.62, avg_time: 0.41
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.64, avg_time: 1.64
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.68, avg_time: 10.42
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.63, avg_time: 6.80
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.65, avg_time: 23.24
-=======
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.69, avg_time: 0.58
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.65, avg_time: 0.63
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.63, avg_time: 5.45
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.66, avg_time: 4.33
-=======
 INFO:root:Completed 10 iterations for tabu_len: 50, avg_score: 2.71, avg_time: 1.03
 INFO:root:Completed 10 iterations for tabu_len: 100, avg_score: 2.64, avg_time: 0.78
 INFO:root:Completed 10 iterations for tabu_len: 200, avg_score: 2.64, avg_time: 0.74
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for pop_size: 20, avg_score: 2.71, avg_time: 12.71
 INFO:root:Completed 5 iterations for pop_size: 10, avg_score: 2.58, avg_time: 2.49
-=======
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.62, avg_time: 0.67
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.63, avg_time: 2.83
 INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.64, avg_time: 12.43
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.64, avg_time: 14.57
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.66, avg_time: 7.94
-=======
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.70, avg_time: 0.92
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.65, avg_time: 0.79
 INFO:root:Completed 10 iterations for generations: 250, avg_score: 2.67, avg_time: 0.83
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.68, avg_time: 4.59
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.59, avg_time: 4.24
-=======
 INFO:root:Completed 5 iterations for pop_size: 80, avg_score: 2.70, avg_time: 40.24
 INFO:root:Completed 5 iterations for pop_size: 100, avg_score: 2.73, avg_time: 49.30
 INFO:root:Completed 5 iterations for pop_size: 150, avg_score: 2.78, avg_time: 73.14
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.61, avg_time: 2.72
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.66, avg_time: 4.39
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.67, avg_time: 6.06
-=======
 INFO:root:Completed 5 iterations for mutation_rate: 0.01, avg_score: 2.76, avg_time: 36.36
 INFO:root:Completed 5 iterations for mutation_rate: 0.05, avg_score: 2.74, avg_time: 35.47
 INFO:root:Completed 5 iterations for mutation_rate: 0.001, avg_score: 2.69, avg_time: 36.39
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.66, avg_time: 7.27
 INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.64, avg_time: 31.13
-=======
 INFO:root:Completed 5 iterations for memory_depth: 3, avg_score: 2.72, avg_time: 36.50
 INFO:root:Completed 5 iterations for memory_depth: 4, avg_score: 2.71, avg_time: 34.46
 INFO:root:Completed 5 iterations for memory_depth: 5, avg_score: 2.73, avg_time: 35.80
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-<<<<<<< Updated upstream
 INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.71, avg_time: 5.77
 INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.68, avg_time: 5.39
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
@@ -1641,11 +1489,9 @@ INFO:matplotlib.category:Using categorical units to plot a list of strings that 
 INFO:root:Completed 5 iterations for generations: 10, avg_score: 2.62, avg_time: 6.81
 INFO:root:Completed 5 iterations for generations: 20, avg_score: 2.67, avg_time: 4.77
 INFO:root:Completed 5 iterations for generations: 30, avg_score: 2.67, avg_time: 7.97
-=======
 INFO:root:Completed 5 iterations for generations: 100, avg_score: 2.69, avg_time: 14.30
 INFO:root:Completed 5 iterations for generations: 250, avg_score: 2.67, avg_time: 35.64
 INFO:root:Completed 5 iterations for generations: 500, avg_score: 2.67, avg_time: 69.84
->>>>>>> Stashed changes
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
@@ -1715,6 +1561,8 @@ INFO:matplotlib.category:Using categorical units to plot a list of strings that 
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.67, avg_time: 9.57
+INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.65, avg_time: 23.62
 INFO:root:Completed 20 iterations for memory_depth: 2, avg_score: 2.71, avg_time: 0.19
 INFO:root:Completed 20 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 0.49
 INFO:root:Completed 20 iterations for memory_depth: 4, avg_score: 2.59, avg_time: 1.95
@@ -1723,6 +1571,8 @@ INFO:matplotlib.category:Using categorical units to plot a list of strings that 
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:root:Completed 10 iterations for generations: 100, avg_score: 2.63, avg_time: 7.16
+INFO:root:Completed 10 iterations for generations: 50, avg_score: 2.66, avg_time: 9.34
 INFO:root:Completed 20 iterations for generations: 50, avg_score: 2.64, avg_time: 0.65
 INFO:root:Completed 20 iterations for generations: 100, avg_score: 2.66, avg_time: 0.55
 INFO:root:Completed 20 iterations for generations: 250, avg_score: 2.66, avg_time: 0.71
@@ -2622,3 +2472,9 @@ INFO:matplotlib.category:Using categorical units to plot a list of strings that 
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.59, avg_time: 6.25
+INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.66, avg_time: 18.54
+INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.65, avg_time: 49.57
+INFO:root:Completed 10 iterations for memory_depth: 3, avg_score: 2.65, avg_time: 1.29
+INFO:root:Completed 10 iterations for memory_depth: 4, avg_score: 2.62, avg_time: 3.78
+INFO:root:Completed 10 iterations for memory_depth: 5, avg_score: 2.62, avg_time: 22.03
