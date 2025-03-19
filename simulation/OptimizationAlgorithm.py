@@ -73,6 +73,7 @@ class OptimizationAlgorithm:
         self.rounds: int = rounds
         self.memory_depth: int = memory_depth
         self.bit_arr_len: int = 2 ** (2 * memory_depth)
+        self.global_best = (None, 0)
 
     def step(self, rounds: int):
         pass
