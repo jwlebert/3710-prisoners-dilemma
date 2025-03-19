@@ -233,17 +233,17 @@ def run_experiments(
 
 def run_genetic_experiments(img_path: str):
     results = []
-    pop_sizes = [80, 100, 120, 150, 200]
-    mutation_rates = [0.001, 0.01, 0.05, 0.1]
-    memory_depths = [2, 3, 4, 5]
-    generations = [100, 200, 250, 500]
-    num_iterations = 10  # Number of times to run each iteration
+    pop_sizes = [20, 100, 250, 500, 1000]
+    mutation_rates = [0.0001, 0.001, 0.01, 0.1, 0.5]
+    memory_depths = [1, 2, 3, 4, 5]
+    generations = [20, 100, 250, 500, 1000]
+    num_iterations = 20  # Number of times to run each iteration
 
     fixed_params = {
-        "pop_size": 150,
-        "mutation_rate": 0.05,
+        "pop_size": 250,
+        "mutation_rate": 0.001,
         "memory_depth": 3,
-        "generations": 200,
+        "generations": 250,
     }
 
     with open(f"{img_path}/fixed.json", "w", encoding="utf-8") as f:
@@ -260,6 +260,9 @@ def run_genetic_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/pop_size_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
     results.append(
         run_experiments(
             GeneticExperiments,
@@ -271,6 +274,8 @@ def run_genetic_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/mutation_rate_inline.csv"
+    results[-1].to_csv(filename, index=False)
 
     results.append(
         run_experiments(
@@ -283,6 +288,9 @@ def run_genetic_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/memory_depth_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
     results.append(
         run_experiments(
             GeneticExperiments,
@@ -294,19 +302,21 @@ def run_genetic_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/memory_depth_inline.csv"
+    results[-1].to_csv(filename, index=False)
 
     return results
 
 
 def run_hill_climbing_experiments(img_path: str):
     results = []
-    memory_depths = [2, 3, 4, 5]
-    generations = [50, 100, 250, 500]
-    num_iterations = 20  # Number of times to run each iteration
+    memory_depths = [1, 2, 3, 4, 5]
+    generations = [50, 100, 250, 500, 1000]
+    num_iterations = 30  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 200,
+        "generations": 250,
     }
 
     with open(f"{img_path}/fixed.json", "w", encoding="utf-8") as f:
@@ -323,6 +333,9 @@ def run_hill_climbing_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/memory_depth_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
     results.append(
         run_experiments(
             HillClimbingExperiments,
@@ -334,20 +347,22 @@ def run_hill_climbing_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/generations_inline.csv"
+    results[-1].to_csv(filename, index=False)
 
     return results
 
 
 def run_tabu_search_experiments(img_path: str):
     results = []
-    memory_depths = [2, 3, 4, 5]
-    generations = [50, 100, 250, 500]
+    memory_depths = [1, 2, 3, 4, 5]
+    generations = [50, 100, 250, 500, 1000]
     tabu_len = [20, 50, 100, 200, 250]
-    num_iterations = 20  # Number of times to run each iteration
+    num_iterations = 30  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 200,
+        "generations": 250,
         "tabu_len": 100,
     }
 
@@ -365,6 +380,9 @@ def run_tabu_search_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/tabu_len_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
     results.append(
         run_experiments(
             TabuSearchExperiment,
@@ -376,6 +394,9 @@ def run_tabu_search_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/memory_depth_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
     results.append(
         run_experiments(
             TabuSearchExperiment,
@@ -387,6 +408,8 @@ def run_tabu_search_experiments(img_path: str):
             img_path,
         )
     )
+    filename = f"{img_path}/generations_inline.csv"
+    results[-1].to_csv(filename, index=False)
 
     return results
 
