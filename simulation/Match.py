@@ -2,6 +2,7 @@ from typing import List, Tuple
 
 from Strategy import Strategy, Action
 
+
 class Match:
     def __init__(self, s1: Strategy, s2: Strategy, rounds=100):
         self.rounds: int = rounds
@@ -10,7 +11,7 @@ class Match:
 
         self.p1: Strategy.Strategy = s1(self)
         self.p2: Strategy.Strategy = s2(self)
-    
+
     def step_round(self) -> None:
         actions = (act1, act2) = self.p1.next_move(), self.p2.next_move()
 
@@ -23,7 +24,7 @@ class Match:
         self.p2.history.append(actions[::-1])
 
         self.round += 1
-    
+
     def evaluate_round(self, actions: Tuple[Action, Action]) -> Tuple[int, int]:
         if actions == (Action.COOPERATE, Action.COOPERATE):
             return (3, 3)
@@ -34,7 +35,7 @@ class Match:
         if actions == (Action.DEFECT, Action.DEFECT):
             return (1, 1)
         return None
-    
+
     def simulate(self):
         for i in range(self.rounds):
             self.step_round()

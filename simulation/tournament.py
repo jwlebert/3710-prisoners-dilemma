@@ -5,34 +5,9 @@ import pandas as pd
 import seaborn as sns
 
 from Match import Match
-from Strategy import (
-    AlwaysCooperate,
-    AlwaysDefect,
-    TitForTat,
-    TitFor2Tat,
-    SuspiciousTitForTat,
-    Random,
-    GenerousTitForTat,
-    Pavlov,
-    GrimTrigger,
-    Prober
-)
 
-strategies = [
-    AlwaysCooperate,
-    AlwaysDefect,
-    TitForTat,
-    TitFor2Tat,
-    SuspiciousTitForTat,
-    Random,
-    GenerousTitForTat,
-    Pavlov,
-    GrimTrigger,
-    Prober
-]
 
 from OptimizationAlgorithm import BitArrayStrategy
-from Experiments import GeneticExperiments
 
 
 def tournament(strategies, rounds=100):
@@ -42,13 +17,33 @@ def tournament(strategies, rounds=100):
 
     # print(strategies)
     # Get best genetic algorithm strategy
-    genetic_strategy = GeneticExperiments()
+    genetic_strat = 0b11100100111000111111011010111101110010100101010011111011101000
+    hill_climb_strat = 0b10100100011011000111111000101011100011101100000111000110011001
+    tabu_strat = 0b1111011111100011000001101010110011010001000000100111011001011100
 
     strategies.append(
         (
             BitArrayStrategy,
             "GeneticAlgorithm",
-            genetic_strategy,
+            genetic_strat,
+            3,
+        )
+    )
+
+    strategies.append(
+        (
+            BitArrayStrategy,
+            "HillClimbing",
+            hill_climb_strat,
+            3,
+        )
+    )
+
+    strategies.append(
+        (
+            BitArrayStrategy,
+            "TabuSearch",
+            tabu_strat,
             3,
         )
     )
@@ -124,6 +119,32 @@ def heatmap(frame):
 
 # %%
 if __name__ == "__main__":
+    from Strategy import (
+        AlwaysCooperate,
+        AlwaysDefect,
+        TitForTat,
+        TitFor2Tat,
+        SuspiciousTitForTat,
+        Random,
+        GenerousTitForTat,
+        Pavlov,
+        GrimTrigger,
+        Prober,
+    )
+
+    strategies = [
+        AlwaysCooperate,
+        AlwaysDefect,
+        TitForTat,
+        TitFor2Tat,
+        SuspiciousTitForTat,
+        Random,
+        GenerousTitForTat,
+        Pavlov,
+        GrimTrigger,
+        Prober,
+    ]
+
     results = tournament(strategies)
     frame = table(results)
     heatmap(frame)

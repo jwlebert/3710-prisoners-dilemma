@@ -4,26 +4,31 @@ import random
 
 import Match
 
+
 class Action(Enum):
     COOPERATE = 0
     DEFECT = 1
+
 
 class Strategy:
     def __init__(self, match: Match):
         self.match: Match = match
         self.score: int = 0
-        self.history: List[Action] = [] # (player, opponent) <- move format
+        self.history: List[Action] = []  # (player, opponent) <- move format
 
     def next_move(self) -> Action:
         pass
+
 
 class AlwaysCooperate(Strategy):
     def next_move(self):
         return Action.COOPERATE
 
+
 class AlwaysDefect(Strategy):
     def next_move(self):
         return Action.DEFECT
+
 
 class TitForTat(Strategy):
     def next_move(self):
@@ -31,7 +36,8 @@ class TitForTat(Strategy):
             return Action.COOPERATE
         else:
             return self.history[-1][1]
-        
+
+
 class SuspiciousTitForTat(Strategy):
     def next_move(self):
         if len(self.history) == 0:
@@ -39,9 +45,11 @@ class SuspiciousTitForTat(Strategy):
         else:
             return self.history[-1][1]
 
+
 class Random(Strategy):
     def next_move(self):
         return random.choice([Action.DEFECT, Action.COOPERATE])
+
 
 class TitFor2Tat(Strategy):
     def next_move(self):
@@ -69,6 +77,7 @@ class GenerousTitForTat(Strategy):
         else:
             return Action.COOPERATE
 
+
 class Pavlov(Strategy):
     def next_move(self):
         if len(self.history) == 0:
@@ -80,23 +89,25 @@ class Pavlov(Strategy):
         else:
             return Action.COOPERATE
 
+
 class GrimTrigger(Strategy):
-    def __init__(self, match: Match):
+    def __init__(self, match: "Match"):
         super().__init__(match)
         self.trigger = False
 
     def next_move(self):
         if self.trigger:
             return Action.DEFECT
-        
+
         if len(self.history) and self.history[-1][1] == Action.DEFECT:
             self.trigger = True
             return Action.DEFECT
-        
+
         return Action.COOPERATE
 
+
 class Prober(Strategy):
-    def __init__(self, match: Match):
+    def __init__(self, match: "Match"):
         super().__init__(match)
         self.exploit = False
 
@@ -110,14 +121,15 @@ class Prober(Strategy):
             return Action.DEFECT
         elif turn == 2:
             return Action.COOPERATE
-        elif turn == 3: 
+        elif turn == 3:
             if (
-                self.history[1][1] == Action.COOPERATE and
-                self.history[2][1] == Action.COOPERATE
-            ): self.exploit = True
+                self.history[1][1] == Action.COOPERATE
+                and self.history[2][1] == Action.COOPERATE
+            ):
+                self.exploit = True
 
         if self.exploit:
             return Action.DEFECT
-        else: # TFT
+        else:  # TFT
             opponent_last_move = self.history[-1][1]
             return opponent_last_move
