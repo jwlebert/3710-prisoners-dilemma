@@ -13,6 +13,8 @@ class HillClimbing(OptimizationAlgorithm):
         if self.fitness is None:
             self.fitness = self.evaluate(self.bit_arr, rounds)
 
+        neighbours = [self.bit_flip(i) for i in range(self.bit_arr_len)]
+
         evaluated_neighbors = [(n, self.evaluate(n, rounds)) for n in neighbours]
         max_neighbour, highest_fitness = max(evaluated_neighbors, key=lambda x: x[1])
 
