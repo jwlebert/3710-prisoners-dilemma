@@ -38,3 +38,13 @@ INFO:root:   mutation_rate  avg_time  avg_score
 1          0.010    552.00       2.72
 2          0.050     76.86       2.68
 0          0.001     73.81       2.64
+INFO:root:Completed 30 iterations for memory_depth: 1, avg_score: 2.62, avg_time: 0.13
+INFO:root:Completed 30 iterations for memory_depth: 2, avg_score: 2.68, avg_time: 0.85
+INFO:root:Completed 30 iterations for memory_depth: 3, avg_score: 2.67, avg_time: 2.44
+INFO:root:Completed 30 iterations for memory_depth: 4, avg_score: 2.59, avg_time: 6.23
+INFO:root:Completed 30 iterations for memory_depth: 5, avg_score: 2.61, avg_time: 28.75
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:matplotlib.category:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+INFO:root:Completed 30 iterations for generations: 10, avg_score: 2.63, avg_time: 1.40

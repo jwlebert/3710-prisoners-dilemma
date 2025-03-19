@@ -1,6 +1,7 @@
 from algorithms.GeneticAlgorithm import GeneticAlgorithm
 from algorithms.HillClimbing import HillClimbing
 from algorithms.TabuSearch import TabuSearch
+from algorithms.HillClimbingRandomRestart import HillClimbingRandomRestart
 from OptimizationAlgorithm import OptimizedTournament
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -38,6 +39,16 @@ def HillClimbingExperiments(memory_depth, generations):
         hill_climbing_strategy,
         OptimizedTournament(hill_climbing_strategy, memory_depth, rounds).get_score(),
     )
+
+def HillClimbingRandomRestartExperiment(num_restarts, memory_depth, generations):
+    hcrr = HillClimbingRandomRestart(num_restarts=num_restarts, memory_depth=memory_depth)
+    hcrr.train(generations=generations, rounds=rounds)
+    strat = hcrr.best_strategy()
+    return (
+        strat,
+        OptimizedTournament(strat, memory_depth, rounds=rounds).get_score()
+    )
+
 
 def TabuSearchExperiment(tabu_len, memory_depth, generations):
     ts = TabuSearch(tabu_len=tabu_len, memory_depth=memory_depth, rounds=rounds)
@@ -303,30 +314,30 @@ def run_genetic_experiments(img_path: str):
 def run_hill_climbing_experiments(img_path: str):
     results = []
     memory_depths = [1, 2, 3, 4, 5]
-    generations = [50, 100, 250, 500, 1000]
-    num_iterations = 30  # Number of times to run each iteration
+    generations = [1, 2, 3, 4, 5]
+    num_iterations = 100  # Number of times to run each iteration
 
     fixed_params = {
         "memory_depth": 3,
-        "generations": 250,
+        "generations": 50,
     }
 
     with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
         json.dump(fixed_params, f, ensure_ascii=False, indent=4)
 
-    results.append(
-        run_experiments(
-            HillClimbingExperiments,
-            "memory_depth",
-            memory_depths,
-            fixed_params,
-            num_iterations,
-            "Hill Climbing - Memory Depth",
-            img_path,
-        )
-    )
-    filename = f"{img_path}/memory_depth_inline.csv"
-    results[-1].to_csv(filename, index=False)
+    # results.append(
+    #     run_experiments(
+    #         HillClimbingExperiments,
+    #         "memory_depth",
+    #         memory_depths,
+    #         fixed_params,
+    #         num_iterations,
+    #         "Hill Climbing - Memory Depth",
+    #         img_path,
+    #     )
+    # )
+    # filename = f"{img_path}/memory_depth_inline.csv"
+    # results[-1].to_csv(filename, index=False)
 
     results.append(
         run_experiments(
@@ -404,6 +415,68 @@ def run_tabu_search_experiments(img_path: str):
 
     return results
 
+def run_hill_climbing_random_restart_experiments(img_path: str):
+    results = []
+    memory_depths = [1, 2, 3, 4, 5]
+    generations = [10, 25, 50, 100, 250, 500]
+    random_restarts = [5, 10, 25, 50, 100]
+    num_iterations = 30  # Number of times to run each iteration
+
+    fixed_params = {
+        "memory_depth": 2,
+        "generations": 100,
+        "num_restarts": 10,
+    }
+
+    with open(f"{img_path}/fixed.json", 'w', encoding='utf-8') as f:
+        json.dump(fixed_params, f, ensure_ascii=False, indent=4)
+
+    results.append(
+        run_experiments(
+            HillClimbingRandomRestartExperiment,
+            "num_restarts",
+            random_restarts,
+            fixed_params,
+            num_iterations,
+            "HCRR - Random Restarts",
+            img_path
+        )
+    )
+
+    filename = f"{img_path}/random_restarts_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
+    results.append(
+        run_experiments(
+            HillClimbingRandomRestartExperiment,
+            "memory_depth",
+            memory_depths,
+            fixed_params,
+            num_iterations,
+            "HCRR - Memory Depth",
+            img_path
+        )
+    )
+
+    filename = f"{img_path}/memory_depth_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
+    results.append(
+        run_experiments(
+            HillClimbingRandomRestartExperiment,
+            "generations",
+            generations,
+            fixed_params,
+            num_iterations,
+            "HCRR - Generations",
+            img_path
+        )
+    )
+    filename = f"{img_path}/generations_inline.csv"
+    results[-1].to_csv(filename, index=False)
+
+    return results
+
 
 # %%
 def main():
@@ -418,35 +491,44 @@ def main():
         "genetic": ["population_size", "mutation_rate", "memory_depth", "generations"],
         "hillclimbing": ["memory_depth", "generations"],
         "tabu": ["tabu_len", "memory_depth", "generations"],
+        "hcrr": ["random_restarts", "memory_depth", "generations"],
     }
 
-    print("\nRunning Hill Climbing Experiments...")
-    os.makedirs(f"{results_dir}/hillclimbing", exist_ok=True)
-    hillclimbing_results = run_hill_climbing_experiments(f"{results_dir}/hillclimbing")
+    # print("\nRunning Hill Climbing Experiments...")
+    # os.makedirs(f"{results_dir}/hillclimbing", exist_ok=True)
+    # hillclimbing_results = run_hill_climbing_experiments(f"{results_dir}/hillclimbing")
 
-    for i, df in enumerate(hillclimbing_results):
-        filename = f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+    # for i, df in enumerate(hillclimbing_results):
+    #     filename = f"{results_dir}/hillclimbing/{experiment_names['hillclimbing'][i]}.csv"
+    #     df.to_csv(filename, index=False)
+
+    print("\nRunning Hill Climbing Random Restart Experiments...")
+    os.makedirs(f"{results_dir}/hcrr", exist_ok=True)
+    hcrr_results = run_hill_climbing_random_restart_experiments(f"{results_dir}/hcrr")
+
+    for i, df in enumerate(hcrr_results):
+        filename = f"{results_dir}/hcrr/{experiment_names['hcrr'][i]}.csv"
         df.to_csv(filename, index=False)
 
 
-    print("\nRunning Tabu Search Experiments...")
-    os.makedirs(f"{results_dir}/tabu", exist_ok=True)
-    tabu_search_results = run_tabu_search_experiments(f"{results_dir}/tabu")
+    # print("\nRunning Tabu Search Experiments...")
+    # os.makedirs(f"{results_dir}/tabu", exist_ok=True)
+    # tabu_search_results = run_tabu_search_experiments(f"{results_dir}/tabu")
 
-    for i, df in enumerate(tabu_search_results):
-        filename = f"{results_dir}/tabu/{experiment_names['tabu'][i]}.csv"
-        df.to_csv(filename, index=False)
+    # for i, df in enumerate(tabu_search_results):
+    #     filename = f"{results_dir}/tabu/{experiment_names['tabu'][i]}.csv"
+    #     df.to_csv(filename, index=False)
 
 
-    print("Running Genetic Algorithm Experiments...")
-    os.makedirs(f"{results_dir}/genetic", exist_ok=True)
-    genetic_results = run_genetic_experiments(f"{results_dir}/genetic")
+    # print("Running Genetic Algorithm Experiments...")
+    # os.makedirs(f"{results_dir}/genetic", exist_ok=True)
+    # genetic_results = run_genetic_experiments(f"{results_dir}/genetic")
 
-    for i, df in enumerate(genetic_results):
-        filename = (
-            f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
-        )
-        df.to_csv(filename, index=False)
+    # for i, df in enumerate(genetic_results):
+    #     filename = (
+    #         f"{results_dir}/genetic/{experiment_names['genetic'][i]}_.csv"
+    #     )
+    #     df.to_csv(filename, index=False)
 
 
 # %%

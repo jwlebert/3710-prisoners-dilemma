@@ -85,6 +85,7 @@ class OptimizationAlgorithm:
         if not logging:
             for _ in range(generations + 1): 
                 if self.step(rounds) is not None:
+                    print(self.iteration)
                     return self.best_strategy()
         else:
             for gen in range(generations + 1):
