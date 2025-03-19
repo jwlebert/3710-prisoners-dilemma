@@ -17,9 +17,6 @@ class HillClimbingRandomRestart(OptimizationAlgorithm):
         evaluated_neighbors = [(n, self.evaluate(n, rounds)) for n in neighbours]
         max_neighbour, highest_fitness = max(evaluated_neighbors, key=lambda x: x[1])
 
-        max_neighbour = max(neighbours, key=lambda n: self.evaluate(n, rounds))
-        highest_fitness = self.evaluate(max_neighbour, rounds)
-
         if highest_fitness <= self.fitness:
             if (self.fitness > self.global_best[1]):
                 self.global_best = (self.bit_arr, self.fitness)

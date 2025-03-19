@@ -38,6 +38,13 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         if not len(self.population):
             self.rounds = rounds
             self.initial_sample()
+
+        best_individual: GeneticIndividual = sorted(
+            self.population, key=lambda l: l.fitness, reverse=True
+        )[0]
+
+        if best_individual.fitness > self.global_best[1]:
+            self.global_best = (best_individual.chromosome, best_individual.fitness)
             
         next_generation = []
 
@@ -57,10 +64,7 @@ class GeneticAlgorithm(OptimizationAlgorithm): # population
         return None
     
     def best_strategy(self):
-        best_individual: GeneticIndividual = sorted(
-            self.population, key=lambda l: l.fitness, reverse=True
-        )[0]
-        return best_individual.chromosome
+        return self.global_best[0]
 
     def select_parents(
         self,

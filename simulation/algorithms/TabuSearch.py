@@ -23,12 +23,13 @@ class TabuSearch(OptimizationAlgorithm):
             max_neighbour, highest_fitness = max(evaluations, key=lambda x: x[1])
         else:
             return self.iteration
-
-        if highest_fitness <= self.fitness:
-            return self.iteration
         
         self.bit_arr = max_neighbour
         self.fitness = highest_fitness
+
+        if self.fitness > self.global_best[1]:
+            self.global_best = (self.bit_arr, self.fitness)
+
         self.tabu.append(max_neighbour)
         self.tabu = self.tabu[0:self.tabu_len]
         
@@ -37,7 +38,7 @@ class TabuSearch(OptimizationAlgorithm):
         return None
     
     def best_strategy(self):
-        return self.bit_arr
+        return self.global_best[0]
         
     def evaluate(self, bit_arr, rounds):
         tournament = OptimizedTournament(bit_arr, self.memory_depth, rounds=rounds)
